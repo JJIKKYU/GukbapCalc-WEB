@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: -1px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    width: 1280px;
+    height: 100%;
+    background-color: black;
+    margin: 0 auto;
+}
+
+
+#header {
+    
+    width: 1920px;
+    height: 1080px;
+}
+
+/* 네비게이션바 NavBar */
+.navBar {
+    width: 585px;
+    height: 125px;
+    /* background-color: black; */
+    background-image: url("../images/navBarBG.png");
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#hambugerMenu {
+    width: 34px;
+    height: 30px;
+    background-image: url("../images/hambugerMenu.png");
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+/* 타이틀씬 */
+.title {
+    font-weight: 600;
+    margin-top: 250px;
+    margin-left: 320px;
+    width: 900px;
+    float: left;
+}
+
+.title .titleText {
+    font-size: 55px;
+}
+
+.arrow {
+    margin-top: 200px;
+    width: 87px;
+    height: 86px;
+    background-image: url("../images/arrow.png");
+}
+
+.title #titleYellow {
+    color : #FFC854;
+}
+
+.title #product,
+.title #price,
+.title #bowl {
+    color : #FFC854;
+    border-bottom: 4px solid #FFC854;
+}
+
+#gukbap {
+    margin-top: 20px;
+    float: left;
+    width: 700px;
+    height: 900px;
+    background-image: url("../images/titleGukbap.png");
+    background-size: cover;
+}
+
+/* 국밥선택 */
+.gukbap-select {
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+}
+
+#gukbapBar {
+    width: 320px;
+    height: 100%;
+    float: left;
+    border: 1px solid yellow;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#gukbapBar ul {
+    display: inline-block;;
+}
+
+#gukbapBar ul li {
+    font-size: 16px;    
+    color: #747474;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+#gukbapBar #navHEAD,
+#gukbapBar #navSEED {
+    width: 110px;
+    height: 35px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 3px 6px 1px rgba(0,0,0,.15);
+    padding-top: 10px;
+}
+
+#gukbapBar #navSDK {
+    margin-top: 540px;
+}
+
+#gukbapBar #navSDK,
+#gukbapBar #navPIG {
+    width: 95px;
+    height: 35px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0px 3px 6px 1px rgba(0,0,0,.15);
+    position: relative;
+    left: 7px;
+    padding-top: 10px;
+}
+
+.verticalLine {
+    border: 1px solid #D4D4D4;
+    height: 250px;
+    position: absolute;
+    left: 160px;
+    margin-top: 540px;
+    z-index: -1;
+}
+
+/* 국밥 타이틀 */
+
+#gukbapTitle {
+    padding-top: 140px;
+    width: 750px;
+    height: 100%;
+    float: left;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+#gukbapTitle h1 {
+    color: #00AD5D;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+#gukbapImg {
+    width: 850px;
+    height: 100%;
+    position: relative;
+    float: right;
+    background-image: url("../images/SDK.png");
+    background-position: right;
+}
+
+#gukbapImg .gukbapTipText {
+    display: inline-block;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 25px;;
+    width: 250px;
+}
+
+#gukbapImg #border-left {
+    margin-top: 7px;
+    height: 90px;
+    float: left;
+    border-left: 6px solid white;
+    padding-right: 10px;
+}
+
+#gukbapImg .gukbapTipText h1 {
+    font-size: 50px;
+}
+
+#gukbapImg .gukbapTipText h3 {
+    font-size: 24px;
+}
