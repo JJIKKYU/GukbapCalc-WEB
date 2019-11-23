@@ -17,12 +17,12 @@
         <!-- 메인 타이틀 -->
         <div class="title">
             <h1 class="titleText">
-                <span id="product">에어팟프로</span> <span id="price">330,000원</span>에 살 바에 <br>
+                <input type="text" value="에어팟프로" id="product" maxlength="8"><input type="text" value="330000" id="price"><span id="price">원</span></span>에 살 바에 <br>
                 뜨끈하고 든든한 <span id="titleYellow">순대국밥</span> <br>
                 <span id="bowl">55그릇</span> 먹고말지
             </h1>
 
-            <div class="arrow"></div>
+            <a href="#gukbap-select"><div class="arrow"></div></a>
         </div>
 
         <!-- 우측 국밥 이미지 -->
@@ -32,27 +32,22 @@
 
     </header>
 
-    <div class="select-gukbap">
-
-    </div>
-
-
-    <div class="gukbap-select">
+    <div class="gukbap-select" id="gukbap-select">
         <div class="container">
             <div id="gukbapBar">
                 <div class="verticalLine"></div>
                 <ul>
-                    <li id="navSDK">순대국밥</li>
-                    <li id="navPIG">돼지국밥</li>
-                    <li id="navHEAD">소머리국밥</li>
-                    <li id="navSEED">콩나물국밥</li>
+                    <li id="navSDK" onclick="gukbapSelectClick('sdk');">순대국밥</li>
+                    <li id="navPIG" onclick="gukbapSelectClick('pig');">돼지국밥</li>
+                    <li id="navHEAD" onclick="gukbapSelectClick('head');">소머리국밥</li>
+                    <li id="navSEED" onclick="gukbapSelectClick('seed');">콩나물국밥</li>
                 </ul>
             </div>
             <!-- 여러분의 국밥 원픽 선택 -->
             <div id="gukbapTitle">
                 <h1>여러분의 국밥 원픽을<br>선택해주세요!</h1>
             </div>
-            <div id="gukbapImg">
+            <div id="gukbapImg" onclick="gukbapSelectClick('sdk');">
                 <div class="gukbapTipText">
                     <div id="border-left"></div>
                     <h3>쫄깃한 식감</h3>
@@ -62,7 +57,28 @@
         </div>
 
 
+    </div> 
+    <!-- gukbap-select -->
+
+    <div class="gukbap-introduce">
+        <div class="contents-container">
+            <div class="sdk-title">
+                <h1>순대는 몽골리안<br>순대국은 코리안</h1>
+                <div class="bar"></div>
+                <p class="para">순대는 동물의 내장에 선지, 부속고기, 곡물, 채소 등을 넣어서 쪄낸 음식입니다.
+                        순대의 기원에 대해서는 여러 가지 설(說) 중, 가장 신빙성 있는 것은 몽골 유래설입니다.
+                        몽골의 칭기즈칸이 돼지의 창자에다 쌀과 채소를 혼합해 말리거나 얼려 전쟁터의
+                        전시음식으로 먹었다는 것이 시초로 알려집니다.</p>
+                <p class="para">순대국밥은 한반도의 탕반(湯飯)문화에서 비롯된 우리 고유의 음식이라는 것이 정설입니다.
+                        순댓국에 대한 정확한 문헌은 없으나, 일제강점기 이후 유행한 음식으로 짐작됩니다. </p>
+            </div>
+
+            <div class="sdk-ground"></div>
+        </div>
+        <!-- container -->
     </div>
+    <!-- gukbap-introduce -->
 
 </body>
+<script src="js/script.js"></script>
 </html>
