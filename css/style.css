@@ -159,7 +159,6 @@ input[type="number"] {
     width: 20rem;
     height: 100%;
     float: left;
-    border: 1px solid yellow;
     box-sizing: border-box;
     text-align: center;
     display: flex;
@@ -234,7 +233,6 @@ input[type="number"] {
     width: 40rem;
     height: 100%;
     float: left;
-    border: 1px solid red;
     box-sizing: border-box;
 }
 
@@ -328,7 +326,6 @@ input[type="number"] {
 }
 
 #sdk-greenGround {
-    opacity: 0;
     width: 100%;
     height: 185px;
     background-image: url("../images/sdk_introduce_4.png");
@@ -341,7 +338,6 @@ input[type="number"] {
 }
 
 #sdk-yellowGround {
-    opacity: 0;
     width: 100%;
     height: 185px;
     background-image: url("../images/sdk_introduce_5.png");
@@ -418,6 +414,7 @@ input[type="number"] {
     height: 188px;
     background-image: url("../images/pig_introduce_0.png");
     background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -432,6 +429,200 @@ input[type="number"] {
 #head-para {
     display: inline-block;
 }
+
+
+/* 콩나물 국밥 */
+.seed-titleBox {
+    padding-top: 100px;
+}
+
+#seed-title {
+    color: #00AD5D;
+}
+
+#seed-bottom {
+    width: 100%;
+    height: 188px;
+    background-image: url("../images/seed_introduce_0.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+
+/* 국밥만들기 */
+
+.gukbap-make {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#sagol {
+    background-color: #FFC854;
+    padding-bottom: -100px;
+}
+
+#sagol {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5;
+    line-height: 60px;
+}
+
+.gukbap-make-ground {
+    width: 100%;
+    height: 274px;
+    background-image: url("../images/gukbap-make_0.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom: 0;
+}
+
+/* 국밥은 어쩌다 가성비 음식 */
+.why-titleBox {
+    text-align: center;
+    padding-top: 100px;
+}
+
+#why-para {
+    display: inline-block;
+}
+
+#why-title {
+    color: #00AD5D;
+}
+
+/* 재료 페럴렉스 */
+#material {
+
+}
+
+/* 국밥에 뚝배기를 사용하는 이유 */
+
+.plate-titleBox {
+    text-align: center;
+    background-color: black;
+}
+
+#plate-para {
+    display: inline-block;
+    color: white;
+}
+
+#plate-title {
+    color: white;
+}
+
+.green {
+    color: #00AD5D;
+}
+
+.yellow {
+    color: #FFC854;
+}
+
+/* 기호에 맞도록 양념을 추가해주세요! */
+
+.seasoning-titleBox {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.seasoning-titleBox ul {
+    text-align: center;
+    position: relative;
+    margin-top: 15px;
+}
+
+.seasoning-titleBox ul li {
+    display: inline-block;
+    font-size: 1.2rem;
+    background-color: white;
+    border-radius: 24px;
+    padding: 6px 0 10px 0px;
+    text-align: center;
+    color: #747474;
+    width: 110px;
+    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
+    margin-right: 22px;
+    transition: background-color ease-in-out .5s, color ease-in-out .2s;
+    cursor: pointer;
+}
+
+.seasoning-titleBox ul li:hover {
+    background-color: #FFC854;
+    color: white;
+}
+
+/* 대령이요! */
+.complete-titleBox {
+    color: white;
+    float: left;
+    margin-top: 300px;
+    z-index: 1;
+}
+
+.complete-titleBox h1 {
+    font-size: 3rem;
+    line-height: 70px;
+}
+
+.complete-titleBox #gukbapName {
+    background-color: #00AD5D;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#complete {
+    background-color: #FFC854;
+}
+
+#gukbapScore {
+    margin-top: 20px;
+    width: 620px;
+}
+
+.completeGroundTop {
+    background-image: url("../images/gukbap-complete_0.png");
+    width: 100%;
+    height: 249px;
+    position: absolute;
+    top: -100px;
+    left: 0;
+}
+
+.completeGroundBottom {
+    background-image: url("../images/gukbap-complete_1.png");
+    width: 100%;
+    height: 249px;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+}
+
+/* ending 국밥 하나만 기억해주세요 */
+.ending-titleBox {
+    padding-top: 300px;
+}
+
+.ending-titleBox h1 {
+    color: #FFC854;
+    font-size: 3rem;
+    line-height: 60px;
+}
+
 
 /* footer */
 

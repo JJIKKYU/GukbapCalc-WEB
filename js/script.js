@@ -99,17 +99,17 @@ function sdkIntroduceAnimation(scrollYPos) {
     var rightHorse = document.getElementById('sdk-horse2')
     var house = document.getElementById('sdk-house')
 
-    if (scrollYPos >= 2400) {
+    if (scrollYPos >= 1750) {
         console.log("애니메이션 시작");
-        yellowGround.style.opacity = 1;
-        greenGround.style.opacity = 1;
+        // yellowGround.style.opacity = 1;
+        // greenGround.style.opacity = 1;
         leftHorse.style.bottom = 80 + "px";
         rightHorse.style.right = 75 + "px";
         house.style.bottom = 140 + "px";
     }
     else {
-        yellowGround.style.opacity = 0;
-        greenGround.style.opacity = 0;
+        // yellowGround.style.opacity = 0;
+        // greenGround.style.opacity = 0;
         leftHorse.style.bottom = 0 + "px";
         rightHorse.style.right = 0 + "px";
         house.style.bottom = 100 + "px";

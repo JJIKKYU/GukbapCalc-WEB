@@ -31,85 +31,186 @@
         </div>
 
     </header>
-
-    <div class="gukbap-select" id="gukbap-select">
-        <div class="container">
-            <div id="gukbapBar">
-                <div class="verticalLine"></div>
-                <ul>
-                    <li id="navSDK" onclick="gukbapSelectClick('sdk');">순대국밥</li>
-                    <li id="navPIG" onclick="gukbapSelectClick('pig');">돼지국밥</li>
-                    <li id="navHEAD" onclick="gukbapSelectClick('head');">소머리국밥</li>
-                    <li id="navSEED" onclick="gukbapSelectClick('seed');">콩나물국밥</li>
-                </ul>
-            </div>
-            <!-- 여러분의 국밥 원픽 선택 -->
-            <div id="gukbapTitle">
-                <h1>여러분의 국밥 원픽을<br>선택해주세요!</h1>
-            </div>
-            <div id="gukbapImg" onclick="gukbapSelectClick('sdk');">
-                <div class="gukbapTipText">
-                    <div id="border-left"></div>
-                    <h3>쫄깃한 식감</h3>
-                    <h1>순대국밥</h1>
+    <section id="introduce">
+        <div class="gukbap-select" id="gukbap-select">
+            <div class="container">
+                <div id="gukbapBar">
+                    <div class="verticalLine"></div>
+                    <ul>
+                        <li id="navSDK" onclick="gukbapSelectClick('sdk');">순대국밥</li>
+                        <li id="navPIG" onclick="gukbapSelectClick('pig');">돼지국밥</li>
+                        <li id="navHEAD" onclick="gukbapSelectClick('head');">소머리국밥</li>
+                        <li id="navSEED" onclick="gukbapSelectClick('seed');">콩나물국밥</li>
+                    </ul>
+                </div>
+                <!-- 여러분의 국밥 원픽 선택 -->
+                <div id="gukbapTitle">
+                    <h1>여러분의 국밥 원픽을<br>선택해주세요!</h1>
+                </div>
+                <div id="gukbapImg" onclick="gukbapSelectClick('sdk');">
+                    <div class="gukbapTipText">
+                        <div id="border-left"></div>
+                        <h3>쫄깃한 식감</h3>
+                        <h1>순대국밥</h1>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-    </div> 
-    <!-- gukbap-select -->
+        </div> 
+        <!-- gukbap-select -->
 
-    <div class="gukbap-introduce">
-        <div class="contents-container">
-            <div class="sdk-title">
-                <h1 class="introduce-title">순대는 몽골리안<br>순대국은 코리안</h1>
-                <div class="bar"></div>
-                <p class="para">순대는 동물의 내장에 선지, 부속고기, 곡물, 채소 등을 넣어서 쪄낸 음식입니다.
-                        순대의 기원에 대해서는 여러 가지 설(說) 중, 가장 신빙성 있는 것은 몽골 유래설입니다.
-                        몽골의 칭기즈칸이 돼지의 창자에다 쌀과 채소를 혼합해 말리거나 얼려 전쟁터의
-                        전시음식으로 먹었다는 것이 시초로 알려집니다.</p>
-                <p class="para">순대국밥은 한반도의 탕반(湯飯)문화에서 비롯된 우리 고유의 음식이라는 것이 정설입니다.
-                        순댓국에 대한 정확한 문헌은 없으나, 일제강점기 이후 유행한 음식으로 짐작됩니다. </p>
-            </div><!-- sdk-title -->
-            <div id="sdk-greenGround"></div>
-            <div id="sdk-horse1"></div>
-            <div id="sdk-horse2"></div>
-            <div id="sdk-yellowGround"></div>
-            <div id="sdk-house"></div>
-        </div><!-- container -->
-    </div><!-- gukbap-introduce -->
+        <div class="gukbap-introduce">
+            <div class="contents-container">
+                <div class="sdk-title">
+                    <h1 class="introduce-title">순대는 몽골리안<br>순대국은 코리안</h1>
+                    <div class="bar"></div>
+                    <p class="para">순대는 동물의 내장에 선지, 부속고기, 곡물, 채소 등을 넣어서 쪄낸 음식입니다.
+                            순대의 기원에 대해서는 여러 가지 설(說) 중, 가장 신빙성 있는 것은 몽골 유래설입니다.
+                            몽골의 칭기즈칸이 돼지의 창자에다 쌀과 채소를 혼합해 말리거나 얼려 전쟁터의
+                            전시음식으로 먹었다는 것이 시초로 알려집니다.</p>
+                    <p class="para">순대국밥은 한반도의 탕반(湯飯)문화에서 비롯된 우리 고유의 음식이라는 것이 정설입니다.
+                            순댓국에 대한 정확한 문헌은 없으나, 일제강점기 이후 유행한 음식으로 짐작됩니다. </p>
+                </div><!-- sdk-title -->
+                <div id="sdk-greenGround"></div>
+                <div id="sdk-horse1"></div>
+                <div id="sdk-horse2"></div>
+                <div id="sdk-yellowGround"></div>
+                <div id="sdk-house"></div>
+            </div><!-- container -->
+        </div><!-- gukbap-introduce -->
 
-    <div class="gukbap-introduce" id="pig-introduce">
-        <div class="contents-container">
-            <div class="pig-titleBox">
-                <h1 class="introduce-title" id="pig-title">서민의 애환이 담긴<br>돼지국밥</h1>
-                <div class="bar" id="pig-bar"></div>
-                <p class="para" id="pig-para">국밥은 '국에 만 밥이나 국수 또는 미리 국에 밥을 말아 끓인 음식'입니다.
-                                조선시대 이전부터 먹어 왔던 국밥의 조리법은 사골을
-                                맹물에 끓여 먹었던 설농탕(설렁탕)에서 국밥이 유래되었습니다.</p>
-                <p class="para" id="pig-para">돼지국밥은 1950년 한국전쟁 당시 경상도 지방으로 피난 온 피난민들이
-                                먹을 것이 부족하자 미군부대에서 나오는 돼지뼈를 이용해 설렁탕을
-                                만들어 먹은 데서 유래되었다고 합니다.</p>
-            </div><!-- pig-titleBox -->
-            <div id="pig-bottom"></div>
-        </div><!-- contents-container -->
-    </div><!-- gukbap-introduce -->
+        <div class="gukbap-introduce" id="pig-introduce">
+            <div class="contents-container">
+                <div class="pig-titleBox">
+                    <h1 class="introduce-title" id="pig-title">서민의 애환이 담긴<br>돼지국밥</h1>
+                    <div class="bar" id="pig-bar"></div>
+                    <p class="para" id="pig-para">국밥은 '국에 만 밥이나 국수 또는 미리 국에 밥을 말아 끓인 음식'입니다.
+                                    조선시대 이전부터 먹어 왔던 국밥의 조리법은 사골을
+                                    맹물에 끓여 먹었던 설농탕(설렁탕)에서 국밥이 유래되었습니다.</p>
+                    <p class="para" id="pig-para">돼지국밥은 1950년 한국전쟁 당시 경상도 지방으로 피난 온 피난민들이
+                                    먹을 것이 부족하자 미군부대에서 나오는 돼지뼈를 이용해 설렁탕을
+                                    만들어 먹은 데서 유래되었다고 합니다.</p>
+                </div><!-- pig-titleBox -->
+                <div id="pig-bottom"></div>
+            </div><!-- contents-container -->
+        </div><!-- gukbap-introduce -->
 
-    <div class="gukbap-introduce" id="head-introduce">
-        <div class="contents-container">
-            <div class="head-titleBox">
-                <h1 class="introduce-title" id="head-title">값비싼 소의 가장 싼 부위<br>소머리 국밥</h1>
-                <div class="bar"></div><br>
-                <p class="para" id="head-para">농경 사회에서 가장 중요한 가축이었던 소는 조선 시대엔 무단으로 도축하면
-                            중형에 처할 정도로 중요한 자원 취급했습니다. 그러므로 한 번 소를 잡게 되면
-                            우육 외에도 내장과 각종 부산물을 하나도 버리는 것 없이 이것저것 응용했죠.</p><br>
-                <p class="para" id="head-para">그중에서도 소꼬리, 도가니, 머리뼈 등 처치 곤란한 부위들 중 소머리뼈를 가져다
-                            무쇠 가마솥에 고아서 푹 끓인 후 밥을 말아 낸 요리가 소머리국밥입니다.</p>
-            </div><!-- pig-titleBox -->
-        </div><!-- contents-container -->
-    </div><!-- gukbap-introduce -->
+        <div class="gukbap-introduce" id="head-introduce">
+            <div class="contents-container">
+                <div class="head-titleBox">
+                    <h1 class="introduce-title" id="head-title">값비싼 소의 가장 싼 부위<br>소머리 국밥</h1>
+                    <div class="bar"></div><br>
+                    <p class="para" id="head-para">농경 사회에서 가장 중요한 가축이었던 소는 조선 시대엔 무단으로 도축하면
+                                중형에 처할 정도로 중요한 자원 취급했습니다. 그러므로 한 번 소를 잡게 되면
+                                우육 외에도 내장과 각종 부산물을 하나도 버리는 것 없이 이것저것 응용했죠.</p><br>
+                    <p class="para" id="head-para">그중에서도 소꼬리, 도가니, 머리뼈 등 처치 곤란한 부위들 중 소머리뼈를 가져다
+                                무쇠 가마솥에 고아서 푹 끓인 후 밥을 말아 낸 요리가 소머리국밥입니다.</p>
+                </div><!-- pig-titleBox -->
+            </div><!-- contents-container -->
+        </div><!-- gukbap-introduce -->
 
+        <div class="gukbap-introduce" id="seed-introduce">
+            <div class="contents-container">
+                <div class="seed-titleBox">
+                    <h1 class="introduce-title" id="seed-title">아삭한 식감이<br>매력적인<br>콩나물국밥</h1>
+                    <div class="bar"></div><br>
+                    <p class="para" id="seed-para">콩나물의 역사를 보면 고려시대와 조선시대 나물로 무쳐먹었다는 정도의 기록만 있습니다.
+                                그 이후 1910년부터 나타난 조리법이 바로 전주의 '콩나물국밥'입니다.
+                                즉 콩나물국밥은 전주에서 유래되었다는 것을 의미하며 지금도 이곳 전주에서는
+                                수십년간 영업을 해온 전국적으로 유명한 콩나물국밥집이 많습니다.</p>
+                    <p class="para" id="seed-para">콩나물은 독성이 없고 위장 장애를 풀어주며 아스파라긴산이 함유되어 있어
+                                알콜 분해해 특히 효과가 있는데요. 그래서 콩나물을 주재료로 숙취해소를
+                                돕는 음식을 만들어 먹었습니다. 콩나물은 구하기 쉽고 가격도 저렴해서 부담없어
+                                누구나 요리할 수 있는 식재료여서 더욱 즐겨먹게 되었나봅니다.</p>
+                </div><!-- seed titleBox -->
+                <div id="seed-bottom"></div>
+            </div><!-- contents-container -->
+        </div><!-- gukbap-introduce -->
+    </section><!-- introduce section -->
+
+    <section id="make-gukbap">
+        <div class="gukbap-make" id="sagol">
+            <div class="contents-container">
+                <h1>깊은 맛을 낼 수 있도록<br>사골국물을 잘 우려주세요!</h1>
+                <div class="gukbap-make-ground"></div>
+            </div><!-- contents-container -->
+        </div><!-- gukbap-make -->
+        
+        <div class="gukbap-introduce" id="why-introduce">
+            <div class="contents-container">
+                <div class="why-titleBox">
+                    <h1 class="introduce-title" id="why-title">국밥은 어쩌다<br>가성비 음식이 되었을까요?</h1>
+                    <div class="bar"></div><br>
+                    <p class="para" id="why-para">돼지국밥은 서민들의 쓰린 속을 시원하게 풀어주는 해장 음식으로 속을 든든하게 하는
+                        한 끼 식사인 서민음식으로 자리 잡았습니다. 돼지뼈와 내장, 수육 등을 이용해 깊고 진한 맛을
+                         가지며 쇠고기보다 돼지고기의 소비가 많아 돼지고기의 수급이 원활하고 고기를 먹고 난
+                         부산물인 뼈를 사용하여 가격이 저렴합니다. 또한 칼슘, 단백질 등 영양소가 많이 함유되어
+                         영양 면에서도 우수해 오늘날 가성비 음식으로 자리메김 하게 되었다고 합니다.</p>
+                </div><!-- pig-titleBox -->
+            </div><!-- contents-container -->
+        </div><!-- gukbap-introduce -->
+
+        <div class="gukbap-make" id="material">
+            <div class="contents-container">
+                
+            </div><!-- contents-container -->
+        </div><!-- gukbap-make -->
+
+        <div class="gukbap-introduce" id="why-introduce">
+            <div class="contents-container">
+                <div class="plate-titleBox">
+                    <h1 class="introduce-title" id="plate-title">국밥에 <span class="green">뚝배기</span>를 사용하는 이유!</h1>
+                    <div class="bar"></div><br>
+                    <p class="para" id="plate-para">돼빨리 끓고 빨리 식는 금속으로 만든 냄비와는 달리 열 전도율이 낮은 재질 특성과 열에 버텨야 하는 그릇의 목적상
+                        두께가 금속제 그릇보다 상당히 두꺼운데, 이러한 특징이 합쳐져 끓는 속도가 느리지만 식는 속도도 역시 느립니다.
+                        이러한 뚝배기의 특성 때문에 오랫동안 뜨끈-하고 든든-하게 먹을 수 있도록 국밥과 천생연분 이랍니다!</p>
+                </div><!-- pig-titleBox -->
+            </div><!-- contents-container -->
+        </div><!-- gukbap-introduce -->
+
+        <div class="gukbap-make" id="material">
+            <div class="contents-container">
+                <div class="seasoning-titleBox">
+                    <h1>기호에 맞도록 <span class="yellow">양념</span>을 <span class="yellow">추가</span>해주세요!</h1>
+                    <ul>
+                        <li>새우젓</li>
+                        <li>다대기</li>
+                        <li>후추</li>
+                    </ul>
+                </div>
+            </div><!-- contents-container -->
+        </div><!-- gukbap-make -->
+
+        <div class="gukbap-make" id="complete">
+            <div class="contents-container">
+                <div class="complete-titleBox">
+                    <h1>뜨뜻-하고 든든-한<br><span id="gukbapName">돼지국밥</span> 대령이요!</h1>
+                    <p class="para" id="gukbapScore">사골을 너무 오랫동안 우려 텁텁하지만
+                        돼지고기의 부드러움과 다대기가 그 맛을 잡아준다.
+                        새우젓을 한 번쯤 넣었다면 어땠을까? 약간은 싱겁다.
+                        이 국밥은 100점 만점에 65점.</p>
+                </div>
+                <div class="completeGroundTop"></div>
+                <div class="completeGroundBottom"></div>
+            </div><!-- contents-container -->
+        </div><!-- gukbap-make -->
+
+        <div class="gukbap-make" id="ending">
+            <div class="contents-container">
+                <div class="ending-titleBox">
+                    <h1>국밥 하나만 기억해주세요.<br>
+                        진심을 다해 전합니다.</h1>
+                    <div class="bar"></div>
+                    <p class="para">여러분들이 직접 만든 국밥을 친구에게 카카오톡으로 전달해보세요!<br>
+                        오늘은 친구와 함께 뜨끈-하고 든든-한 국밥 어떠신가요?</p>
+                </div>
+            </div><!-- contents-container -->
+        </div><!-- gukbap-make -->
+
+    </section><!-- make-gukbap -->
+
+    <!-- footer -->
     <footer>
         <div class="contents-container">
             <div class="name">
