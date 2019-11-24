@@ -4,6 +4,10 @@ calculator();
 
 function calculator() {
     var sdk = 6000;
+    var productBottom = document.getElementById("productBottom");
+    var bowlBottom = document.getElementById("bowlBottom");
+    var productTop = document.getElementById("product");
+
     var priceObj = document.getElementById('price');
     priceObj.addEventListener("keyup", calc);
 
@@ -15,6 +19,8 @@ function calculator() {
             document.getElementById('bowl').innerHTML = "안";
         }
         else{
+            bowlBottom.innerHTML = "국밥" + result + "그릇";
+            productBottom.innerHTML = productTop.value;
             document.getElementById('bowl').innerHTML = result + "그릇";
         }
         
@@ -52,17 +58,26 @@ window.addEventListener('scroll', function SelectGukbap() {
     var pig = document.getElementById('navPIG');
     var head = document.getElementById('navHEAD');
     var seed = document.getElementById('navSEED');
+    var gukbapBar = document.getElementById("gukbapBar");
 
     var scrollYPos = 0;
     var scrollYPosNomarlize = 0;
 
     scrollYPos = Math.round(window.scrollY);
     scrollYPosNomarlize = Math.round(window.scrollY/20);
-    if (scrollYPos > 375 && scrollYPos < 935) {
+    if (scrollYPos > 375 && scrollYPos < 1400) {
         console.log("너 순대꾹밥");
         sdk.style.backgroundColor = "#FFC854";
+        gukbapBar.style.display = "block";
+        gukbapBar.style.opacity = 1;
         sdk.style.color = "white";
         GukbapSelect = Gukbap.sdk;
+    } else {
+        sdk.style.backgroundColor = "white";
+        sdk.style.color = "#747474";
+        gukbapBar.style.opacity = 0;
+        gukbapBar.style.display = "hidden";
+        gukbapSelect = null;
     }
     console.log(scrollYPos);
     console.log(GukbapSelect);

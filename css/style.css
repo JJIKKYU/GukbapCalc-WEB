@@ -88,6 +88,12 @@ a {
     height: 86px;
     background-image: url("../images/arrow.png");
     display: inline-block;
+    transition: background-image ease-in-out .5s, transform ease-in-out .5s;
+}
+
+.arrow:hover {
+    background-image: url("../images/arrow_hover.png");
+    transform: rotate(360deg);
 }
 
 
@@ -158,12 +164,25 @@ input[type="number"] {
 #gukbapBar {
     width: 20rem;
     height: 100%;
-    float: left;
-    box-sizing: border-box;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
     text-align: center;
-    display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 350px;
+    display: hidden;
+    opacity: 0;
+    
+    transition: opacity ease-in-out .5s;
+    /* float: left;
+    box-sizing: border-box;
+    
+    display: flex;
+    
+     */
 }
 
 #gukbapBar ul {
@@ -220,6 +239,7 @@ input[type="number"] {
 }
 
 .verticalLine {
+    margin-left: 10rem;
     border: 1px solid #D4D4D4;
     height: 250px;
     position: absolute;
@@ -234,6 +254,7 @@ input[type="number"] {
     height: 100%;
     float: left;
     box-sizing: border-box;
+    margin-left: 20rem;
 }
 
 #gukbapTitle h1 {
@@ -390,7 +411,7 @@ input[type="number"] {
 .pig-titleBox {
     float: right;
     display: inline-block;
-    margin-top: 300px;
+    margin-top: 250px;
 }
 
 #pig-title {
@@ -614,7 +635,8 @@ input[type="number"] {
 
 /* ending 국밥 하나만 기억해주세요 */
 .ending-titleBox {
-    padding-top: 300px;
+    padding-top: 230px;
+    display: inline-block;;
 }
 
 .ending-titleBox h1 {
@@ -622,6 +644,61 @@ input[type="number"] {
     font-size: 3rem;
     line-height: 60px;
 }
+
+.share {
+    margin-top: 220px;
+    float: right;
+    padding-top: 300px;
+    width: 350px;
+    height: 620px;
+    display: inline-block;
+    text-align: center;
+    background-color: white;
+    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#myGukbap {
+    width: 350px;
+    height: 280px;
+    background-color: #FFC854;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+#shareTitle {
+    text-align: left;
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+.myGukbapBar {
+    width: 350px;
+    border: .5px solid #747474;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+}
+
+#shareBtn {
+    background-color: #FFC854;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    width: 350px;
+    height: 40px;
+    padding-top: 3px;
+    font-size: 1.2rem;
+}
+
+#productBottom,
+#bowlBottom {
+    color: #FFC854;
+    border-bottom: 2px solid #FFC854;
+}
+
 
 
 /* footer */
