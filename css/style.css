@@ -156,7 +156,7 @@ input[type="number"] {
 
 /* 국밥선택 */
 .gukbap-select {
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100vw;
     height: 100vh;
 }
@@ -261,27 +261,46 @@ input[type="number"] {
     color: #00AD5D;
     font-size: 50px;
     font-weight: 600;
+    z-index: 200;
 }
 
-#gukbapImg {
+.gukbapImg {
     width: 50vw;
     height: 100%;
     position: absolute;
     right: 0;
-    /* background-image: url("../images/SDK.png"); */
-    background-color: #747474;
+    /* background-color: #747474; */
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     transition: width ease-in-out .5s;
     cursor: pointer;
 }
 
-#gukbapImg:hover {
+#sdkImg {
+    background-image: url("../images/SDK.png");
+}
+
+#pigImg {
+    background-image: url("../images/PIG.png");
+}
+
+#headImg {
+    background-image: url("../images/HEAD.png");
+}
+
+#seedImg {
+    background-image: url("../images/SEED.png");
+}
+
+
+
+.gukbapImg:hover {
     width: 85vw;
 }
 
-#gukbapImg .gukbapTipText {
+.gukbapImg .gukbapTipText {
     display: inline-block;
     color: white;
     position: absolute;
@@ -290,7 +309,7 @@ input[type="number"] {
     width: 250px;
 }
 
-#gukbapImg #border-left {
+.gukbapImg #border-left {
     margin-top: 7px;
     height: 90px;
     float: left;
@@ -298,11 +317,11 @@ input[type="number"] {
     padding-right: 10px;
 }
 
-#gukbapImg .gukbapTipText h1 {
+.gukbapImg .gukbapTipText h1 {
     font-size: 50px;
 }
 
-#gukbapImg .gukbapTipText h3 {
+.gukbapImg .gukbapTipText h3 {
     margin-bottom: -12px;
     padding-top: 5px;
     font-weight: 400;
@@ -691,6 +710,12 @@ input[type="number"] {
     height: 40px;
     padding-top: 3px;
     font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color ease-in-out .5s;
+}
+
+#shareBtn:hover {
+    background-color: #00AD5D;
 }
 
 #productBottom,

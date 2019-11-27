@@ -12,7 +12,6 @@ function calculator() {
     priceObj.addEventListener("keyup", calc);
 
     function calc(){
-        console.log("IN");
         var inputPrice = priceObj.value;
         var result = parseInt(inputPrice / sdk);
         if (result <= 0){
@@ -65,6 +64,7 @@ window.addEventListener('scroll', function SelectGukbap() {
 
     scrollYPos = Math.round(window.scrollY);
     scrollYPosNomarlize = Math.round(window.scrollY/20);
+    
     if (scrollYPos > 375 && scrollYPos < 1400) {
         console.log("너 순대꾹밥");
         sdk.style.backgroundColor = "#FFC854";
@@ -76,7 +76,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         sdk.style.backgroundColor = "white";
         sdk.style.color = "#747474";
         gukbapBar.style.opacity = 0;
-        gukbapBar.style.display = "hidden";
+        gukbapBar.style.display = "none";
         gukbapSelect = null;
     }
     console.log(scrollYPos);
@@ -87,21 +87,27 @@ window.addEventListener('scroll', function SelectGukbap() {
 
 
 function gukbapSelectClick(inputGukbap) {
+    var gukbapName = document.getElementById("gukbapName");
+
     console.log(inputGukbap)
     if ("sdk" == inputGukbap) {
         GukbapSelect = Gukbap.sdk;
+        gukbapName.innerHTML = "순대국밥";
         console.log("순대국밥 선택완료");
     }
     else if ("pig" == inputGukbap) {
         GukbapSelect = Gukbap.pig;
+        gukbapName.innerHTML = "돼지국밥";
         console.log("돼지국밥 선택완료");
     }
     else if ("head" == inputGukbap) {
         GukbapSelect = Gukbap.head;
+        gukbapName.innerHTML = "소머리국밥";
         console.log("소머리국밥 선택완료");
     }
     else {
         GukbapSelect = Gukbap.seed;
+        gukbapName.innerHTML = "콩나물국밥";
         console.log("콩나물국밥 선택완료")
     }
     console.log("현재 GukbapSelect = " + GukbapSelect);
@@ -118,15 +124,19 @@ function sdkIntroduceAnimation(scrollYPos) {
         console.log("애니메이션 시작");
         // yellowGround.style.opacity = 1;
         // greenGround.style.opacity = 1;
+        /*
         leftHorse.style.bottom = 80 + "px";
         rightHorse.style.right = 75 + "px";
-        house.style.bottom = 140 + "px";
+        hose.style.bottom = 140 + "px";
+        */
     }
     else {
         // yellowGround.style.opacity = 0;
         // greenGround.style.opacity = 0;
+        /*
         leftHorse.style.bottom = 0 + "px";
         rightHorse.style.right = 0 + "px";
         house.style.bottom = 100 + "px";
+        */
     }
 }
