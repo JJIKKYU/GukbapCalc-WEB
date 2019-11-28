@@ -553,6 +553,7 @@ input[type="number"] {
 }
 
 #head-interaction #head {
+    transition: all ease-in-out 1s;
     filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
 }
 
@@ -562,8 +563,8 @@ input[type="number"] {
     top: -450px;
     left: -480px;
     opacity: 0;
-    transition: opacity ease-in-out .3s;
-    transition-delay: 0.2s;
+    transition: opacity ease-in-out .2s;
+    /* transition-delay: 0.2s; */
 }
 
 #head-interaction #light2 {
@@ -572,8 +573,8 @@ input[type="number"] {
     top: -450px;
     right: -500px;
     opacity: 0;
-    transition: opacity ease-in-out .3s;
-    transition-delay: 0.4s;
+    transition: opacity ease-in-out .2s;
+    /* transition-delay: 0.4s; */
 }
 
 #head-interaction #light3 {
@@ -582,8 +583,8 @@ input[type="number"] {
     top: 300px;
     left: -480px;
     opacity: 0;
-    transition: opacity ease-in-out .3s;
-    transition-delay: 0.8s;
+    transition: opacity ease-in-out .2s;
+    /* transition-delay: 0.8s; */
 }
 
 #head-interaction #light4 {
@@ -592,8 +593,8 @@ input[type="number"] {
     top: 300px;
     right: -460px;
     opacity: 0;
-    transition: opacity ease-in-out .3s;
-    transition-delay: 0.6s;
+    transition: opacity ease-in-out .2s;
+    /* transition-delay: 0.6s; */
 }
 
 #leftMoney {
@@ -676,6 +677,7 @@ input[type="number"] {
 #rightMoney img:nth-child(6) {
     margin-top: 300px;
     margin-right: -500px;
+    opacity: 0.9;
 }
 
 
@@ -695,8 +697,18 @@ input[type="number"] {
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    bottom: 0;
+    bottom: -80px;
     left: 0;
+}
+
+#seed-bottomImg {
+    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
+    z-index: 99;
+    position: absolute;
+    right: 0;
+    margin-right: 350px;
+    bottom: -80px;
+    transform: scale(0.5);
 }
 
 

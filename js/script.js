@@ -52,17 +52,20 @@ var Gukbap = {
     }
 }
 
+var scrollPercent;
+
 $(window).on('scroll', function(){
     var s = $(window).scrollTop(),
         d = $(document).height(),
         c = $(window).height();
   
-    var scrollPercent = (s / (d - c)) * 100;
+    scrollPercent = (s / (d - c)) * 100;
     
     console.clear();
     console.log(scrollPercent);
   })
 
+var scrollYPos = 0;
 window.addEventListener('scroll', function SelectGukbap() {
     
     var sdk = document.getElementById('navSDK');
@@ -71,7 +74,7 @@ window.addEventListener('scroll', function SelectGukbap() {
     var seed = document.getElementById('navSEED');
     var gukbapBar = document.getElementById("gukbapBar");
 
-    var scrollYPos = 0;
+    scrollYPos = 0;
     var scrollYPosNomarlize = 0;
 
     scrollYPos = Math.round(window.scrollY);
@@ -178,28 +181,43 @@ function gukbapSelectClick(inputGukbap) {
     console.log("현재 GukbapSelect = " + GukbapSelect);
 }
 
+var change = true;
+
+setInterval(function() {
+    var head = document.getElementById("head");
+    var light1 = document.getElementById("light1");
+    var light2 = document.getElementById("light2");
+    var light3 = document.getElementById("light3");
+    var light4 = document.getElementById("light4");
+
+    if (change && scrollYPos >= 6400 && scrollYPos < 7000) {
+        head.src = "images/head_introduce_0_changer.png"
+        light1.style.opacity = 0;
+        light2.style.opacity = 0;
+        light3.style.opacity = 0;
+        light4.style.opacity = 0;
+        change = false;
+    }
+    else if (change == false && scrollYPos >= 6400 && scrollYPos < 7000){
+        head.src = "images/head_introduce_0.png"
+        light1.style.opacity = 1;
+        light2.style.opacity = 1;
+        light3.style.opacity = 1;
+        light4.style.opacity = 1;
+        change = true;
+    }
+}, 1000);
+
 function sdkIntroduceAnimation(scrollYPos) {
     var light1 = document.getElementById("light1");
     var light2 = document.getElementById("light2");
     var light3 = document.getElementById("light3");
     var light4 = document.getElementById("light4");
 
-    if (scrollYPos >= 6400 && scrollYPos < 7400) {
-        light1.style.opacity = 1;
-        light2.style.opacity = 1;
-        light3.style.opacity = 1;
-        light4.style.opacity = 1;
-    }
-    else if (scrollYPos >= 7400){
+    if (scrollYPos >= 7000){
         light1.style.opacity = 0;
         light2.style.opacity = 0;
         light3.style.opacity = 0;
-        light4.style.opacity = 1;
-    }
-    else {
-        light1.style.opacity = 0;
-        light2.style.opacity = 0;
-        light3.style.opacity = 0;
-        light4.style.opacity = 0;
+        light4.style.opacity = 1;    
     }
 }
