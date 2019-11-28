@@ -52,7 +52,19 @@ var Gukbap = {
     }
 }
 
+$(window).on('scroll', function(){
+    var s = $(window).scrollTop(),
+        d = $(document).height(),
+        c = $(window).height();
+  
+    var scrollPercent = (s / (d - c)) * 100;
+    
+    console.clear();
+    console.log(scrollPercent);
+  })
+
 window.addEventListener('scroll', function SelectGukbap() {
+    
     var sdk = document.getElementById('navSDK');
     var pig = document.getElementById('navPIG');
     var head = document.getElementById('navHEAD');
@@ -63,28 +75,77 @@ window.addEventListener('scroll', function SelectGukbap() {
     var scrollYPosNomarlize = 0;
 
     scrollYPos = Math.round(window.scrollY);
-    scrollYPosNomarlize = Math.round(window.scrollY/20);
+    scrollYPosNomarlize = window.scrollY;
+
     
-    if (scrollYPos > 375 && scrollYPos < 1400) {
-        console.log("너 순대꾹밥");
+
+    if (scrollYPos > 95 && scrollYPos < 1450)
+    {
+        // 나머지 리스트 컬러 초기화
+        pig.style.backgroundColor = "#FFFFFF";
+        pig.style.color = "#747474";
+        head.style.backgroundColor = "#FFFFFF";
+        head.style.color = "#747474";
+        seed.style.backgroundColor = "#FFFFFF";
+        seed.style.color = "#747474";
+
+        // 순대국밥 선택관련
+        console.log("순대국밥 선택");
         sdk.style.backgroundColor = "#FFC854";
-        gukbapBar.style.display = "block";
-        gukbapBar.style.opacity = 1;
-        sdk.style.color = "white";
+        sdk.style.color = "#FFFFFF";
         GukbapSelect = Gukbap.sdk;
-    } else {
-        sdk.style.backgroundColor = "white";
-        sdk.style.color = "#747474";
-        gukbapBar.style.opacity = 0;
-        gukbapBar.style.display = "none";
-        gukbapSelect = null;
     }
-    console.log(scrollYPos);
-    console.log(GukbapSelect);
+    else if (scrollYPos > 1450 && scrollYPos < 2350)
+    {
+        // 나머지 리스트 컬러 초기화
+        sdk.style.backgroundColor = "#FFFFFF";
+        sdk.style.color = "#747474";
+        head.style.backgroundColor = "#FFFFFF";
+        head.style.color = "#747474";
+        seed.style.backgroundColor = "#FFFFFF";
+        seed.style.color = "#747474";
+
+        console.log("돼지국밥 선택");
+        pig.style.backgroundColor = "#FFC854";
+        pig.style.color = "#FFFFFF";
+        GukbapSelect = Gukbap.pig;
+    }
+    else if (scrollYPos > 2350 && scrollYPos < 3250)
+    {
+        // 나머지 리스트 컬러 초기화
+        sdk.style.backgroundColor = "#FFFFFF";
+        sdk.style.color = "#747474";
+        pig.style.backgroundColor = "#FFFFFF";
+        pig.style.color = "#747474";
+        seed.style.backgroundColor = "#FFFFFF";
+        seed.style.color = "#747474";
+
+        console.log("소머리국밥 선택");
+        head.style.backgroundColor = "#FFC854";
+        head.style.color = "#FFFFFF";
+        GukbapSelect = Gukbap.head;
+    }
+    else if (scrollYPos > 3250 && scrollYPos < 4250)
+    {
+        // 나머지 리스트 컬러 초기화
+        sdk.style.backgroundColor = "#FFFFFF";
+        sdk.style.color = "#747474";
+        pig.style.backgroundColor = "#FFFFFF";
+        pig.style.color = "#747474";
+        head.style.backgroundColor = "#FFFFFF";
+        head.style.color = "#747474";
+
+        console.log("콩나물국밥 선택");
+        seed.style.backgroundColor = "#FFC854";
+        seed.style.color = "#FFFFFF";
+        GukbapSelect = Gukbap.seed;
+    }
+    // console.log(scrollYPos);
+    console.log(scrollYPosNomarlize);
+    // console.log(GukbapSelect);
 
     sdkIntroduceAnimation(scrollYPos);
 });
-
 
 function gukbapSelectClick(inputGukbap) {
     var gukbapName = document.getElementById("gukbapName");
@@ -94,49 +155,51 @@ function gukbapSelectClick(inputGukbap) {
         GukbapSelect = Gukbap.sdk;
         gukbapName.innerHTML = "순대국밥";
         console.log("순대국밥 선택완료");
+        location.href = "#sdk-introduce";
     }
     else if ("pig" == inputGukbap) {
         GukbapSelect = Gukbap.pig;
         gukbapName.innerHTML = "돼지국밥";
         console.log("돼지국밥 선택완료");
+        location.href = "#pig-introduce";
     }
     else if ("head" == inputGukbap) {
         GukbapSelect = Gukbap.head;
         gukbapName.innerHTML = "소머리국밥";
         console.log("소머리국밥 선택완료");
+        location.href = "#head-introduce";
     }
     else {
         GukbapSelect = Gukbap.seed;
         gukbapName.innerHTML = "콩나물국밥";
         console.log("콩나물국밥 선택완료")
+        location.href = "#seed-introduce";
     }
     console.log("현재 GukbapSelect = " + GukbapSelect);
 }
 
 function sdkIntroduceAnimation(scrollYPos) {
-    var greenGround = document.getElementById('sdk-greenGround');
-    var yellowGround = document.getElementById('sdk-yellowGround');
-    var leftHorse = document.getElementById('sdk-horse1');
-    var rightHorse = document.getElementById('sdk-horse2')
-    var house = document.getElementById('sdk-house')
+    var light1 = document.getElementById("light1");
+    var light2 = document.getElementById("light2");
+    var light3 = document.getElementById("light3");
+    var light4 = document.getElementById("light4");
 
-    if (scrollYPos >= 1750) {
-        console.log("애니메이션 시작");
-        // yellowGround.style.opacity = 1;
-        // greenGround.style.opacity = 1;
-        /*
-        leftHorse.style.bottom = 80 + "px";
-        rightHorse.style.right = 75 + "px";
-        hose.style.bottom = 140 + "px";
-        */
+    if (scrollYPos >= 6400 && scrollYPos < 7400) {
+        light1.style.opacity = 1;
+        light2.style.opacity = 1;
+        light3.style.opacity = 1;
+        light4.style.opacity = 1;
+    }
+    else if (scrollYPos >= 7400){
+        light1.style.opacity = 0;
+        light2.style.opacity = 0;
+        light3.style.opacity = 0;
+        light4.style.opacity = 1;
     }
     else {
-        // yellowGround.style.opacity = 0;
-        // greenGround.style.opacity = 0;
-        /*
-        leftHorse.style.bottom = 0 + "px";
-        rightHorse.style.right = 0 + "px";
-        house.style.bottom = 100 + "px";
-        */
+        light1.style.opacity = 0;
+        light2.style.opacity = 0;
+        light3.style.opacity = 0;
+        light4.style.opacity = 0;
     }
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
+    
     <title>국밥계산기 - Gukbap Calculator</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
     <section id="introduce">
         <div class="gukbap-select" id="gukbap-select">
             <div class="container">
-                <div id="gukbapBar" >
+                <div id="gukbapBar" data-parallax='{"y":2700, "from-scroll": 940, "distance":2700, "smoothness":0}'>
                     <div class="verticalLine"></div>
                     <ul>
                         <li id="navSDK" onclick="gukbapSelectClick('sdk');">순대국밥</li>
@@ -46,7 +47,7 @@
                     </ul>
                 </div>
                 <!-- 여러분의 국밥 원픽 선택 -->
-                <div id="gukbapTitle" data-parallax='{"y":3900, "from-scroll": 1300, "distance":3900, "smoothness":0}'>
+                <div id="gukbapTitle" data-parallax='{"y":2700, "from-scroll": 940, "distance":2700, "smoothness":0}'>
                     <h1 >여러분의 국밥 원픽을<br>선택해주세요!</h1>
                 </div>
                 <div class="gukbapImg" id="sdkImg" onclick="gukbapSelectClick('sdk');">
@@ -62,7 +63,7 @@
         <div class="gukbap-select" id="gukbap-select">
             <div class="container">
 
-                <div class="gukbapImg" id ="pigImg" onclick="gukbapSelectClick('sdk');">
+                <div class="gukbapImg" id ="pigImg" onclick="gukbapSelectClick('pig');">
                     <div class="gukbapTipText">
                         <div id="border-left"></div>
                         <h3>오리지날은 영원하다</h3>
@@ -74,7 +75,7 @@
 
         <div class="gukbap-select" id="gukbap-select">
             <div class="container">
-                <div class="gukbapImg" id ="headImg" onclick="gukbapSelectClick('sdk');">
+                <div class="gukbapImg" id ="headImg" onclick="gukbapSelectClick('head');">
                     <div class="gukbapTipText">
                         <div id="border-left"></div>
                         <h3>마음까지 든든-한</h3>
@@ -86,7 +87,7 @@
 
         <div class="gukbap-select" id="gukbap-select">
             <div class="container">
-                <div class="gukbapImg" id ="seedImg" onclick="gukbapSelectClick('sdk');">
+                <div class="gukbapImg" id ="seedImg" onclick="gukbapSelectClick('seed');">
                     <div class="gukbapTipText">
                         <div id="border-left"></div>
                         <h3>고소한 참기름향</h3>
@@ -96,7 +97,7 @@
             </div><!-- container -->
         </div> <!-- gukbap-select -->
 
-        <div class="gukbap-introduce">
+        <div class="gukbap-introduce" id="sdk-introduce">
             <div class="contents-container">
                 <div class="sdk-title">
                     <h1 class="introduce-title">순대는 몽골리안<br>순대국은 코리안</h1>
@@ -108,16 +109,28 @@
                     <p class="para">순대국밥은 한반도의 탕반(湯飯)문화에서 비롯된 우리 고유의 음식이라는 것이 정설입니다.
                             순댓국에 대한 정확한 문헌은 없으나, 일제강점기 이후 유행한 음식으로 짐작됩니다. </p>
                 </div><!-- sdk-title -->
-                <div id="sdk-greenGround" data-parallax='{"x":-0, "from-scroll":0, "distance":0, "smoothness":20}'></div>
-                <div id="sdk-horse1" data-parallax='{"y":-200, "from-scroll":200, "smoothness":5}'></div>
-                <div id="sdk-horse2"></div>
-                <div id="sdk-yellowGround"></div>
-                <div id="sdk-house" data-parallax='{"y":100, "from-scroll": 6000, "distance":-100, "smoothness":0}'></div>
+                <div id="sdk-sky">
+                    <img id="moon" src="images/sdk_introduce_3.png" alt="" data-parallax='{"y":100 ,"from-scroll": 4300, "distance":1200,"smoothness":5}'>
+                    <img id="star1" src="images/sdk_introduce_10.png" alt=""data-parallax='{"y":-100 ,"from-scroll": 4300, "distance":1200,"smoothness":5}'>
+                    <img id="star2" src="images/sdk_introduce_9.png" alt=""data-parallax='{"y":80 ,"from-scroll": 4300, "distance":1200,"smoothness":5}'>
+                    <img id="star3" src="images/sdk_introduce_8.png" alt=""data-parallax='{"y":120 ,"from-scroll": 4300, "distance":1200,"smoothness":5}'>
+                    <img id="star4" src="images/sdk_introduce_7.png" alt=""data-parallax='{"y":150 ,"from-scroll": 4300, "distance":1200,"smoothness":5}'>
+                    <!-- <img id="star5" src="images/sdk_introduce_6.png" alt=""data-parallax='{"y":-150 ,"from-scroll": 4300, "distance":700,"smoothness":5}'> -->
+                    <img id="star6" src="images/sdk_introduce_11.png" alt=""data-parallax='{"y":-800 ,"from-scroll": 4300, "distance":1200,"smoothness":5}'>
+                </div><!-- sdk-sky -->
+                <div id="sdk-greenGround" data-parallax='{"y":20, "from-scroll": 4300, "distance":1200,"smoothness":0}'></div>
+                <div id="sdk-horse1" data-parallax='{"y":-100, "from-scroll": 4300, "distance":1200,"smoothness":0}'></div>
+                <div id="sdk-horse2" data-parallax='{"x":-350, "from-scroll": 4000, "distance":1200,"smoothness":5}'></div>
+                <div id="sdk-yellowGround" data-parallax='{"y":-50, "from-scroll": 4000, "distance":1200, "smoothness":5}'></div>
+                <div id="sdk-house" data-parallax='{"y":50, "from-scroll": 4400, "distance":1200, "smoothness":5}'></div>
             </div><!-- container -->
         </div><!-- gukbap-introduce -->
 
         <div class="gukbap-introduce" id="pig-introduce">
             <div class="contents-container">
+                <div id="pig-map">
+                    <img src="images/pig_introduce_1.png" alt="">
+                </div>
                 <div class="pig-titleBox">
                     <h1 class="introduce-title" id="pig-title">서민의 애환이 담긴<br>돼지국밥</h1>
                     <div class="bar" id="pig-bar"></div>
@@ -143,6 +156,30 @@
                     <p class="para" id="head-para">그중에서도 소꼬리, 도가니, 머리뼈 등 처치 곤란한 부위들 중 소머리뼈를 가져다
                                 무쇠 가마솥에 고아서 푹 끓인 후 밥을 말아 낸 요리가 소머리국밥입니다.</p>
                 </div><!-- pig-titleBox -->
+                <div id="head-interaction">
+                    <div id="light">
+                        <img id="head" src="images/head_introduce_0.png" alt="">
+                        <img id="light1" src="images/head_introduce_1.png" alt="">
+                        <img id="light2" src="images/head_introduce_2.png" alt="">
+                        <img id="light3" src="images/head_introduce_3.png" alt="">
+                        <img id="light4" src="images/head_introduce_4.png" alt="">
+                    </div>
+                    <div id="leftMoney">
+                        <img src="images/head_introduce_money_left_1.png" alt="" data-parallax='{"y":-30, "from-scroll": 6000, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_left_2.png" alt="" data-parallax='{"y":-50, "from-scroll": 6000, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_left_3.png" alt="" data-parallax='{"y":-150, "from-scroll": 6000, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_left_4.png" alt="" data-parallax='{"y":-400, "from-scroll": 6300, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_left_5.png" alt="" data-parallax='{"y":-200, "from-scroll": 6400, "distance":1000, "smoothness":5}'>
+                    </div>
+                    <div id="rightMoney">
+                        <img src="images/head_introduce_money_right_1.png" alt="" data-parallax='{"y":-60, "from-scroll": 6000, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_right_5.png" alt="" data-parallax='{"y":-300, "from-scroll": 6000, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_right_3.png" alt="" data-parallax='{"y":-40, "from-scroll": 6000, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_right_4.png" alt="" data-parallax='{"y":-120, "from-scroll": 6300, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_right_2.png" alt="" data-parallax='{"y":-250, "from-scroll": 6400, "distance":1000, "smoothness":5}'>
+                        <img src="images/head_introduce_money_blur_0.png" alt="" data-parallax='{"y":-1200, "from-scroll": 5800, "distance":1200, "smoothness":10}'>
+                    </div>
+                </div>
             </div><!-- contents-container -->
         </div><!-- gukbap-introduce -->
 

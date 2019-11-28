@@ -11,7 +11,7 @@
 }
 
 body {
-    width: 100%;
+    width: 1920px;
     margin: 0 auto;
     overflow-x: hidden;
 }
@@ -165,16 +165,13 @@ input[type="number"] {
     width: 20rem;
     height: 100%;
     z-index: 1;
-    position: fixed;
-    top: 0;
+    position: absolute;
     left: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     text-align: center;
     align-items: center;
     justify-content: center;
     padding-top: 350px;
-    display: hidden;
-    opacity: 0;
     
     transition: opacity ease-in-out .5s;
     /* float: left;
@@ -269,13 +266,13 @@ input[type="number"] {
     height: 100%;
     position: absolute;
     right: 0;
-    /* background-color: #747474; */
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     transition: width ease-in-out .5s;
     cursor: pointer;
+    z-index: 1;
 }
 
 #sdkImg {
@@ -329,10 +326,15 @@ input[type="number"] {
 }
 
 /* 국밥 소개 */
+#introduce {
+    
+}
+
 .gukbap-introduce {
     width: 100%;
     height: 100vh;
     position: relative;
+
 }
 
 .sdk-title {
@@ -373,7 +375,8 @@ input[type="number"] {
     position: absolute;
     left: 0;
     bottom: 0;
-    transition: all ease-in-out 1s;
+    z-index: -1;
+    /* transition: all ease-in-out 1s; */
     background-size: cover;
 }
 
@@ -384,9 +387,9 @@ input[type="number"] {
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: all ease-in-out 1s;
+    bottom: -50px;
+    z-index: -2;
+    /* transition: all ease-in-out 1s; */
     background-size: cover;
 }
 
@@ -397,9 +400,9 @@ input[type="number"] {
     background-image: url("../images/sdk_introduce_0.png");
     background-repeat: no-repeat;
     right: 30%;
-    bottom: 80px;
+    bottom: 0px;
     filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
-    transition: all ease-in-out 1s;
+    /* transition: all ease-in-out 1s; */
 }
 
 #sdk-horse2 {
@@ -408,10 +411,14 @@ input[type="number"] {
     position: absolute;
     background-image: url("../images/sdk_introduce_1.png");
     background-repeat: no-repeat;
-    right: 75px;
-    bottom: 80px;
+    right: -300px;
+    bottom: 40px;
     filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
-    transition: all ease-in-out 1s;
+    /* transition: all ease-in-out 1s; */
+}
+
+#sdk-introduce {
+    
 }
 
 #sdk-house {
@@ -423,7 +430,66 @@ input[type="number"] {
     left: 400px;
     bottom: 140px;
     filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
-    transition: all ease-in-out 1s;
+    /* transition: all ease-in-out 1s; */
+}
+
+#sdk-sky {
+    position: absolute;
+    top: 0;
+    left : 0;
+    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
+    width: 100%;
+    height: 100%;
+}
+
+#sdk-sky #moon {
+    z-index: -1;
+    float: right;
+    margin-right: 80px;
+}
+
+#sdk-sky #star1 {
+    z-index: -1;
+    float: right;
+    margin-top: -50px;
+    margin-right: 80px;
+}
+
+#sdk-sky #star2 {
+    z-index: -1;
+    float: right;
+    margin-top: -50px;
+    margin-right: 80px;
+}
+
+#sdk-sky #star3 {
+    z-index: -1;
+    float: right;
+    margin-top: -50px;
+    margin-right: 120px;
+}
+
+#sdk-sky #star4 {
+    z-index: -1;
+    margin-top: -50px;
+    float: right;
+    margin-right: 80px;
+}
+
+#sdk-sky #star5 {
+    z-index: -1;
+    margin-top: -200px;
+    float: left;
+    margin-left: 80px;
+}
+
+#sdk-sky #star6 {
+    position: absolute;
+    left: -200px;
+    bottom: -150px;
+    width: 600px;
+    z-index: 10;
+    
 }
 
 /* 돼지국밥 */
@@ -460,6 +526,15 @@ input[type="number"] {
     left: 0;
 }
 
+#pig-map {
+    position: absolute;
+    z-index: 10;
+}
+
+#pig-map img{
+    height: 800px;
+}
+
 /* 소머리 국밥 */
 .head-titleBox {
     text-align: center;
@@ -468,6 +543,139 @@ input[type="number"] {
 
 #head-para {
     display: inline-block;
+}
+
+#head-interaction {
+    margin-top: 80px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+#head-interaction #head {
+    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
+}
+
+#head-interaction #light1 {
+    position: absolute;
+    float: left;
+    top: -450px;
+    left: -480px;
+    opacity: 0;
+    transition: opacity ease-in-out .3s;
+    transition-delay: 0.2s;
+}
+
+#head-interaction #light2 {
+    position: absolute;
+    float: right;
+    top: -450px;
+    right: -500px;
+    opacity: 0;
+    transition: opacity ease-in-out .3s;
+    transition-delay: 0.4s;
+}
+
+#head-interaction #light3 {
+    position: absolute;
+    float: left;
+    top: 300px;
+    left: -480px;
+    opacity: 0;
+    transition: opacity ease-in-out .3s;
+    transition-delay: 0.8s;
+}
+
+#head-interaction #light4 {
+    position: absolute;
+    float: right;
+    top: 300px;
+    right: -460px;
+    opacity: 0;
+    transition: opacity ease-in-out .3s;
+    transition-delay: 0.6s;
+}
+
+#leftMoney {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    top: 0;
+}
+
+#leftMoney img{
+    display: block;
+    float: left;
+}
+
+#leftMoney img:nth-child(1) {
+    margin-top: -300px;
+    margin-left: 150px;
+    opacity: 0.8;
+}
+
+#leftMoney img:nth-child(2) {
+    margin-top: -180px;
+    margin-left: -30px;
+    opacity: 0.7;
+}
+
+#leftMoney img:nth-child(3) {
+}
+
+#leftMoney img:nth-child(4) {
+    margin-top: 80px;
+}
+
+#leftMoney img:nth-child(5) {
+    margin-top: 340px;
+    margin-left: -400px;
+}
+
+#rightMoney {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: right;
+    margin-top: -400px;
+}
+
+#rightMoney img {
+    display: block;
+    position: absolute;
+    right: 0;
+}
+
+#rightMoney img:nth-child(1) {
+    margin-top: -340px;
+    opacity: 0.7;
+}
+
+#rightMoney img:nth-child(2) {
+    margin-top: -120px;
+    margin-right: -200px;
+}
+
+#rightMoney img:nth-child(3) {
+    margin-right: 100px;
+    margin-top: -140px;
+    opacity: 0.9;
+}
+
+#rightMoney img:nth-child(4) {
+    margin-top: 120px;
+    margin-right: 170px;    
+}
+
+#rightMoney img:nth-child(5) {
+    margin-top: 280px;
+    margin-right: -50px;
+}
+
+#rightMoney img:nth-child(6) {
+    margin-top: 300px;
+    margin-right: -500px;
 }
 
 
