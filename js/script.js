@@ -190,7 +190,7 @@ setInterval(function() {
     var light3 = document.getElementById("light3");
     var light4 = document.getElementById("light4");
 
-    if (change && scrollYPos >= 6400 && scrollYPos < 7000) {
+    if (change && scrollYPos >= 6000 && scrollYPos < 7000) {
         head.src = "images/head_introduce_0_changer.png"
         light1.style.opacity = 0;
         light2.style.opacity = 0;
@@ -198,7 +198,7 @@ setInterval(function() {
         light4.style.opacity = 0;
         change = false;
     }
-    else if (change == false && scrollYPos >= 6400 && scrollYPos < 7000){
+    else if (change == false && scrollYPos >= 6000 && scrollYPos < 7000){
         head.src = "images/head_introduce_0.png"
         light1.style.opacity = 1;
         light2.style.opacity = 1;
@@ -209,6 +209,18 @@ setInterval(function() {
 }, 1000);
 
 function sdkIntroduceAnimation(scrollYPos) {
+    var map = document.getElementById("pig-map");
+    map.style.backgroundImage = "../images/pig_introduce_1.png";
+    // 돼지국밥 소개
+    if (scrollYPos > 4800) {
+        map.style.backgroundImage = "url('images/pig_introduce_1.png')";
+    }
+    else {
+        map.style.backgroundImage = "url('images/pig_introduce_1_before.png')";
+    }
+
+
+    // 소머리국밥
     var light1 = document.getElementById("light1");
     var light2 = document.getElementById("light2");
     var light3 = document.getElementById("light3");

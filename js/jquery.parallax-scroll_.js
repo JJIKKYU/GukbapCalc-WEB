@@ -30,7 +30,7 @@ var ParallaxScroll = {
 
     /* PRIVATE VARIABLES */
     _inited: false,
-    _properties: ['x', 'y', 'z', 'rotateX', 'rotateY', 'rotateZ', 'scaleX', 'scaleY', 'scaleZ', 'scale', 'op', 'op-scr', 'op-sp'],
+    _properties: ['x', 'y', 'z', 'rotateX', 'rotateY', 'rotateZ', 'scaleX', 'scaleY', 'scaleZ', 'scale'],
     _requestAnimationFrame:null,
 
     /* PRIVATE FUNCTIONS */
@@ -46,7 +46,6 @@ var ParallaxScroll = {
             var properties = [];
             var applyProperties = false;
             var style = $el.data("style");
-            
             if (style == undefined) {
                 style = $el.attr("style") || "";
                 $el.data("style", style);
@@ -95,12 +94,6 @@ var ParallaxScroll = {
                 var scrollCurrent = scroll;
                 scrollCurrent = Math.max(scrollCurrent, scrollFrom);
                 scrollCurrent = Math.min(scrollCurrent, scrollTo);
-                var opacity = data["op"];
-                if (opacity == undefined) opacity = 1;
-                var opScroll = data["op-scr"];
-                if (opScroll == undefined) opScroll = 0;
-                var opSpeed = data["op-sp"];
-                if (opSpeed == undefined) opSpeed = 100;
                 if(easing) {
                     if($el.data("sens") == undefined) $el.data("sens", "back");
                     if(scrollCurrent>scrollFrom) {
@@ -157,24 +150,7 @@ var ParallaxScroll = {
                         applyProperties = true;
                     }
                 }, this));
-
-                var op;
-                
-                if (opacity == 0) {
-                    op = (scroll < scrollFrom ? 0 : (scroll > scrollFrom + opScroll ? 1 : (scroll - scrollFrom)/opSpeed));
-                } else if (opacity == 1) {
-                    op = 1;
-                }
-
-                if (scrollDistance == 1 && scroll < scrollFrom) {
-                    // op = 0;
-                    op = (opacity == 1 ? 1 : (opacity == -1 ? 1 : 0));
-                } else if (scrollDistance == 1 && scroll > scrollFrom) {
-                    op = (opacity == -1 ? 0 : 1);
-                }
-                // console.log(opacity);
             }
-            
             if (applyProperties) {
                 if (properties["z"] != undefined) {
                     var perspective = data["perspective"];
@@ -196,8 +172,7 @@ var ParallaxScroll = {
                 var scale3d = "scaleX(" + properties["scaleX"] + ") scaleY(" + properties["scaleY"] + ") scaleZ(" + properties["scaleZ"] + ")";
                 var cssTransform = translate3d + " " + rotate3d + " " + scale3d + ";";
                 this._log(cssTransform);
-                // $el.attr("style", "transform:" + cssTransform + " -webkit-transform:" + cssTransform +  " " + style);
-                $el.attr("style", "transform:" + cssTransform + " -webkit-transform:" + cssTransform + "opacity:" + op + " " + style);
+                $el.attr("style", "transform:" + cssTransform + " -webkit-transform:" + cssTransform + " " + style);
             }
         }, this));
         if(window.requestAnimationFrame) {
