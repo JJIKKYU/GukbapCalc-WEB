@@ -109,7 +109,17 @@ a {
     font-size: 55px;
     font-weight: 600;
     color : #FFC854;
-    /* border-bottom: 4px solid #FFC854; */
+    border-bottom: 4px solid #FFC854;
+    transition: color ease-in-out .5s;
+}
+
+.title #priceWon {
+    outline: none;
+    border: none;
+    font-size: 55px;
+    font-weight: 600;
+    color : #FFC854;
+    border-bottom: 4px solid #FFC854;
     transition: color ease-in-out .5s;
 }
 
@@ -130,8 +140,11 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 input[type="number"] {
     -moz-appearance: textfield;
 }
+#product:hover {
+    color: #00AD5D;
+}
 
-#product:hover,
+#price:hover + #priceWon,
 #price:hover {
     color: #00AD5D;
 }
@@ -161,7 +174,7 @@ input[type="number"] {
     height: 100vh;
 }
 
-#gukbapBar {
+.gukbapBar {
     width: 20rem;
     height: 100%;
     z-index: 1;
@@ -182,11 +195,11 @@ input[type="number"] {
      */
 }
 
-#gukbapBar ul {
+.gukbapBar ul {
     display: inline-block;;
 }
 
-#gukbapBar ul li {
+.gukbapBar ul li {
     font-size: 16px;    
     color: #747474;
     font-weight: 500;
@@ -934,6 +947,40 @@ input[type="number"] {
 
 /* 국밥만들기 */
 
+#gukbapMakeBar #nav1,
+#gukbapMakeBar #nav2,
+#gukbapMakeBar #nav3,
+#gukbapMakeBar #nav4 {
+    width: 110px;
+    height: 35px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 3px 6px 1px rgba(0,0,0,.15);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: color ease-in-out .3s, background-color ease-in-out .3s;
+    cursor: pointer;;
+}
+
+#gukbapMakeBar ul li {
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+}
+
+#gukbapMakeBar #nav1 {
+    margin-top: 0px;
+    /* margin-top: 540px; */
+}
+
+#gukbapMakeVerticalLine {
+    border: 1px ;
+    border-color: white;
+    transition: 0.5s;
+}
+
+
 .gukbap-make {
     width: 100%;
     height: 100vh;
@@ -964,6 +1011,55 @@ input[type="number"] {
     left:50%;
     transform:translateX(-50%);
     bottom: 0;
+}
+
+
+#gukbapMakePlate {
+    height: 500px;
+    width: 100%;
+    margin-top: 300px;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+
+#plate {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    z-index: 2;
+}
+
+#fire {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    z-index: 9;
+    bottom: 120px;
+}
+
+#plateCover {
+    position:absolute;
+    left:50%;
+    top: 28px;
+    transform:translateX(-50%);
+    z-index: 4;
+}
+
+#bone1 {
+    position:absolute;
+    left:30%;
+    transform:rotate( -10deg );
+    top: -180px;
+    z-index: 3;
+}
+
+#bone2 {
+    position:absolute;
+    right:30%;
+    top: -180px;
+    transform:rotate( 20deg );
+    z-index: 3;
 }
 
 /* 국밥은 어쩌다 가성비 음식 */

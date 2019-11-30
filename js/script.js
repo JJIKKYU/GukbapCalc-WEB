@@ -67,7 +67,7 @@ $(window).on('scroll', function(){
 
 var scrollYPos = 0;
 window.addEventListener('scroll', function SelectGukbap() {
-    
+    // 첫번째 Bar
     var sdk = document.getElementById('navSDK');
     var pig = document.getElementById('navPIG');
     var head = document.getElementById('navHEAD');
@@ -143,6 +143,43 @@ window.addEventListener('scroll', function SelectGukbap() {
         seed.style.color = "#FFFFFF";
         GukbapSelect = Gukbap.seed;
     }
+
+    // 두번째 Bar
+    var nav1 = document.getElementById("nav1");
+    var nav2 = document.getElementById("nav2");
+    var nav3 = document.getElementById("nav3");
+    var nav4 = document.getElementById("nav4");
+    var verticalLine = document.getElementById("gukbapMakeVerticalLine");
+
+    if (scrollYPos > 7800 && scrollYPos < 9000){
+        // 나머지 리스트 컬러 초기화
+        verticalLine.style.border = "1px solid white";
+        nav2.style.backgroundColor = "#FFFFFF";
+        nav2.style.color = "#747474";
+        nav3.style.backgroundColor = "#FFFFFF";
+        nav3.style.color = "#747474";
+        nav4.style.backgroundColor = "#FFFFFF";
+        nav4.style.color = "#747474";
+
+        console.log("사골우리기 단계");
+        nav1.style.backgroundColor = "#00AD5D";
+        nav1.style.color = "#FFFFFF";
+    }
+    else if(scrollYPos >= 9000) {
+        // 나머지 리스트 컬러 초기화
+        verticalLine.style.border = "1px solid #999999";
+        nav1.style.backgroundColor = "#FFFFFF";
+        nav1.style.color = "#747474";
+        nav3.style.backgroundColor = "#FFFFFF";
+        nav3.style.color = "#747474";
+        nav4.style.backgroundColor = "#FFFFFF";
+        nav4.style.color = "#747474";
+
+        console.log("사골우리기 단계");
+        nav2.style.backgroundColor = "#00AD5D";
+        nav2.style.color = "#FFFFFF";
+    }
+
     // console.log(scrollYPos);
     console.log(scrollYPosNomarlize);
     // console.log(GukbapSelect);

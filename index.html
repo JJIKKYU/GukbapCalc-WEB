@@ -20,7 +20,7 @@
         <!-- 메인 타이틀 -->
         <div class="title">
             <h1 class="titleText">
-                <input type="text" value="에어팟프로" id="product" maxlength="8"><input type="text" value="330000" id="price"><span id="price">원</span></span>에 살 바에 <br>
+                <input type="text" value="에어팟프로" id="product" maxlength="8"><input type="text" value="330000" id="price"><span id="priceWon">원</span></span>에 살 바에 <br>
                 뜨끈하고 든든한 <span id="titleYellow">순대국밥</span> <br>
                 <span id="bowl">55그릇</span> 먹고말지
             </h1>
@@ -37,7 +37,7 @@
     <section id="introduce">
         <div class="gukbap-select" id="gukbap-select">
             <div class="container">
-                <div id="gukbapBar" data-parallax='{"y":2700, "from-scroll": 940, "distance":2700, "smoothness":0}'>
+                <div class="gukbapBar" id="gukbapBar" data-parallax='{"y":2700, "from-scroll": 940, "distance":2700, "smoothness":0}'>
                     <div class="verticalLine"></div>
                     <ul>
                         <li id="navSDK" onclick="gukbapSelectClick('sdk');">순대국밥</li>
@@ -215,7 +215,23 @@
     <section id="make-gukbap">
         <div class="gukbap-make" id="sagol">
             <div class="contents-container">
+                    <div class="gukbapBar" id="gukbapMakeBar" data-parallax='{"y":12000, "from-scroll": 8400, "distance":12000, "smoothness":0}'>
+                            <div class="verticalLine" id="gukbapMakeVerticalLine"></div>
+                            <ul>
+                                <li id="nav1">사골우리기</li>
+                                <li id="nav2">재료 넣기</li>
+                                <li id="nav3">양념 추가</li>
+                                <li id="nav4">국밥 완성</li>
+                            </ul>
+                        </div>
                 <h1>깊은 맛을 낼 수 있도록<br>사골국물을 잘 우려주세요!</h1>
+                <div id="gukbapMakePlate">
+                    <img id="plate" src="images/make_0.png" alt="">
+                    <img id="fire" src="images/make_1.png" alt="">
+                    <img id="plateCover" src="images/make_2.png" alt="" >
+                    <img id="bone1" src="images/make_3.png" alt="" data-parallax='{"y":-20, "rotateZ":-30,"from-scroll": 7800, "distance":1200, "smoothness":5}'>
+                    <img id="bone2" src="images/make_3.png" alt="" data-parallax='{"y":40, "rotateZ":40,"from-scroll": 7800, "distance":1200, "smoothness":5}'>
+                </div>
                 <div class="gukbap-make-ground"></div>
             </div><!-- contents-container -->
         </div><!-- gukbap-make -->
