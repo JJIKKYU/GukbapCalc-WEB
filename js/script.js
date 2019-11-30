@@ -213,10 +213,10 @@ function sdkIntroduceAnimation(scrollYPos) {
     map.style.backgroundImage = "../images/pig_introduce_1.png";
     // 돼지국밥 소개
     if (scrollYPos > 4800) {
-        map.style.backgroundImage = "url('images/pig_introduce_1.png')";
+        // map.style.backgroundImage = "url('images/pig_introduce_1.png')";
     }
     else {
-        map.style.backgroundImage = "url('images/pig_introduce_1_before.png')";
+        // map.style.backgroundImage = "url('images/pig_introduce_1_before.png')";
     }
 
 

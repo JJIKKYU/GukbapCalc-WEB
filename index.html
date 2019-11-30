@@ -51,12 +51,13 @@
                     <h1 >여러분의 국밥 원픽을<br>선택해주세요!</h1>
                 </div>
                 <div class="gukbapImg" id="sdkImg" onclick="gukbapSelectClick('sdk');">
-                    <div class="gukbapTipText">
+                    <div class="gukbapTipText" id ="gukbapTipText">
                         <div id="border-left"></div>
                         <h3>쫄깃한 식감</h3>
                         <h1>순대국밥</h1>
                     </div>
                 </div><!-- gukbapImg -->
+                <div class="imgHoverBG" id="sdkImgHover"></div>
             </div><!-- container -->
         </div> <!-- gukbap-select -->
 
@@ -64,36 +65,39 @@
             <div class="container">
 
                 <div class="gukbapImg" id ="pigImg" onclick="gukbapSelectClick('pig');">
-                    <div class="gukbapTipText">
+                    <div class="gukbapTipText" id="gukbapTipTextPig">
                         <div id="border-left"></div>
                         <h3>오리지날은 영원하다</h3>
                         <h1>돼지국밥</h1>
                     </div>
                 </div><!-- gukbapImg -->
+                <div class="imgHoverBG" id="pigImgHover"></div>
             </div><!-- container -->
         </div> <!-- gukbap-select -->
 
         <div class="gukbap-select" id="gukbap-select">
             <div class="container">
                 <div class="gukbapImg" id ="headImg" onclick="gukbapSelectClick('head');">
-                    <div class="gukbapTipText">
+                    <div class="gukbapTipText" id="gukbapTipTextHead">
                         <div id="border-left"></div>
                         <h3>마음까지 든든-한</h3>
                         <h1>소머리국밥</h1>
                     </div>
                 </div><!-- gukbapImg -->
+                <div class="imgHoverBG" id="headImgHover"></div>
             </div><!-- container -->
         </div> <!-- gukbap-select -->
 
         <div class="gukbap-select" id="gukbap-select">
             <div class="container">
                 <div class="gukbapImg" id ="seedImg" onclick="gukbapSelectClick('seed');">
-                    <div class="gukbapTipText">
+                    <div class="gukbapTipText" id="gukbapTipTextSeed">
                         <div id="border-left"></div>
                         <h3>고소한 참기름향</h3>
                         <h1>콩나물국밥</h1>
                     </div>
                 </div><!-- gukbapImg -->
+                <div class="imgHoverBG" id="seedImgHover"></div>
             </div><!-- container -->
         </div> <!-- gukbap-select -->
 
@@ -129,9 +133,10 @@
         <div class="gukbap-introduce" id="pig-introduce">
             <div class="contents-container">
                 <div id="pig-map">
-                    <!-- <img src="images/pig_introduce_1.png" alt=""> -->
-                    <img src="images/pig_introduce_2.png" alt="" data-parallax='{"y":80, "from-scroll":4800, "distance":500, "smoothness":5, "op":0, "op-scr":300, "op-sp":300}'>
-                    <img src="images/pig_introduce_3.png" alt="" data-parallax='{"y":80, "from-scroll":4800, "distance":500, "smoothness":5, "op":0, "op-scr":500, "op-sp":500}'>
+                    <img src="images/pig_introduce_1_before.png" alt="">
+                    <img src="images/pig_introduce_1.png" alt="" data-parallax='{"from-scroll":4800, "distance":500, "smoothness":5, "op":0, "op-scr":700, "op-sp":700}'>
+                    <img src="images/pig_introduce_2.png" alt="" data-parallax='{"y":90, "from-scroll":4800, "distance":1200, "smoothness":5, "op":0, "op-scr":300, "op-sp":300}'>
+                    <img src="images/pig_introduce_3.png" alt="" data-parallax='{"y":60, "from-scroll":4800, "distance":1200, "smoothness":5, "op":0, "op-scr":600, "op-sp":600}'>
                 </div>
                 <div class="pig-titleBox">
                     <h1 class="introduce-title" id="pig-title">서민의 애환이 담긴<br>돼지국밥</h1>
@@ -322,4 +327,14 @@
 </body>
 <script src="js/script.js"></script>
 <script src="js/jquery.parallax-scroll.js"></script>
+
+<svg>
+        <clipPath id="wave" clipPathUnits="objectBoundingBox">
+                <path class="st0" d="M0.08,0C0.08,0.08,0,0.14,0,0.26S0.1,0.4,0.1,0.52S0,0.65,0,0.77S0.08,0.9,0.08,1h1.87V0H0.08z"/>
+        </clipPath>
+        <clipPath id="waveHover" clipPathUnits="objectBoundingBox">
+                <path class="st0" d="M0.08,0C0.08,0.12,0,0.22,0,0.38s0.1,0.21,0.1,0.39S0,0.98,0,1.16S0.08,1.34,0.08,1.5h1.87V0H0.08z"/>
+        </clipPath>
+</svg>
+    
 </html>

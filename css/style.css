@@ -258,7 +258,6 @@ input[type="number"] {
     color: #00AD5D;
     font-size: 50px;
     font-weight: 600;
-    z-index: 200;
 }
 
 .gukbapImg {
@@ -270,31 +269,221 @@ input[type="number"] {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    transition: width ease-in-out .5s;
+    transition: ease-in-out 1s;
+    clip-path: url(#wave);
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
 }
+
+.imgHoverBG {
+    width: 50vw;
+    height: 100%;
+    right: 0;
+    background-color: #FFC854;
+    position: absolute;
+    transition: all ease-in-out 1.3s;
+    clip-path: url(#wave);
+    opacity: 0;
+    z-index: 9;
+    
+}
+
+/* 순대국밥 */
 
 #sdkImg {
-    background-image: url("../images/SDK.png");
+    
+    /* transition: all ease-in-out 2s; */
+    background:url("../images/SDK.png");
+    transition: ease-in-out 1.5s;
+    background-size: cover;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
+#sdkImg:hover {
+    clip-path: url(#wave);
+    background:linear-gradient(0deg,rgba(255,200,84,0.3),rgba(255,200,84,0.3)),url("../images/SDK.png");
+    background-size: cover;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-image: url("../images/SDK.png"); */
+}
+
+#sdkImg:hover > #gukbapTipText {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+#sdkImg:hover > #gukbapTipText > #border-left{
+    opacity: 0;
+}
+
+.gukbapImg:hover + #sdkImgHover {
+    clip-path: url(#wave);
+    width: 86vw;
+    opacity: 1;
+}
+
+/* 돼지국밥 */
+
 
 #pigImg {
-    background-image: url("../images/PIG.png");
+    background: url("../images/PIG.png");
+    transition: ease-in-out 1.5s;
+    background-size: cover;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;   
 }
+
+#pigImg:hover {
+    clip-path: url(#wave);
+    background:linear-gradient(0deg,rgba(255,200,84,0.3),rgba(255,200,84,0.3)),url("../images/PIG.png");
+    background-size: cover;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-image: url("../images/SDK.png"); */
+}
+
+#pigImg:hover > #gukbapTipTextPig {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+#pigImg:hover > #gukbapTipTextPig > #border-left{
+    opacity: 0;
+}
+
+.gukbapImg:hover + #pigImgHover {
+    clip-path: url(#wave);
+    width: 86vw;
+    opacity: 1;
+}
+
+/* 소머리 국밥 */
 
 #headImg {
-    background-image: url("../images/HEAD.png");
+    background: url("../images/HEAD.png");
+    transition: ease-in-out 1.5s;
+    background-size: cover;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;   
 }
 
+#headImg:hover {
+    clip-path: url(#wave);
+    background:linear-gradient(0deg,rgba(255,200,84,0.3),rgba(255,200,84,0.3)),url("../images/HEAD.png");
+    background-size: cover;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-image: url("../images/SDK.png"); */
+}
+
+#headImg:hover > #gukbapTipTextHead {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+#headImg:hover > #gukbapTipTextHead > #border-left{
+    opacity: 0;
+}
+
+.gukbapImg:hover + #headImgHover {
+    clip-path: url(#wave);
+    width: 86vw;
+    opacity: 1;
+}
+
+/* 콩나물국밥 */
+
 #seedImg {
-    background-image: url("../images/SEED.png");
+    background: url("../images/SEED.png");
+    transition: ease-in-out 1.5s;
+    background-size: cover;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;   
+}
+
+#seedImg:hover {
+    clip-path: url(#wave);
+    background:linear-gradient(0deg,rgba(255,200,84,0.3),rgba(255,200,84,0.3)),url("../images/SEED.png");
+    background-size: cover;
+    right: 0;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-image: url("../images/SDK.png"); */
+}
+
+#seedImg:hover > #gukbapTipTextSeed {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+#seedImg:hover > #gukbapTipTextSeed > #border-left{
+    opacity: 0;
+}
+
+.gukbapImg:hover + #seedImgHover {
+    clip-path: url(#wave);
+    width: 86vw;
+    opacity: 1;
 }
 
 
 
 .gukbapImg:hover {
     width: 85vw;
+    
 }
 
 .gukbapImg .gukbapTipText {
@@ -302,7 +491,7 @@ input[type="number"] {
     color: white;
     position: absolute;
     bottom: 20px;
-    left: 25px;;
+    left: 100px;;
     width: 250px;
 }
 
@@ -323,6 +512,7 @@ input[type="number"] {
     padding-top: 5px;
     font-weight: 400;
     font-size: 24px;
+    margin-right: 20px;
 }
 
 /* 국밥 소개 */
@@ -530,28 +720,32 @@ input[type="number"] {
     position: absolute;
     z-index: 10;
     width: 100%;
-    height: 800px;
-    background-size: contain;
-    background-image: url("../images/pig_introduce_1_before.png");
+    /* height: 800px; */
+    /* background-size: contain; */
+    /* background-image: url("../images/pig_introduce_1_before.png"); */
     background-repeat: no-repeat;
     transition: all ease-in-out 2s;
 }
 
-/*
+
 #pig-map img:nth-child(1){
     position: absolute;
     height: 800px;
 }
-*/
 
-#pig-map img:nth-child(1){
+#pig-map img:nth-child(2){
+    position: absolute;
+    height: 800px;
+}
+
+#pig-map img:nth-child(3){
     position: absolute;
     height: 250px;
     margin-left: 170px;
     margin-top: -100px;
 }
 
-#pig-map img:nth-child(2){
+#pig-map img:nth-child(4){
     position: absolute;
     height: 250px;
     margin-left: 150px;
