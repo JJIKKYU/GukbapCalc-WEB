@@ -1,6 +1,8 @@
 resizable(document.getElementById('product'),44);
 resizable(document.getElementById('price'),28);
 calculator();
+headColorChange();
+fireColorChange();
 
 function calculator() {
     var sdk = 6000;
@@ -66,6 +68,7 @@ $(window).on('scroll', function(){
   })
 
 var scrollYPos = 0;
+var changes = false;
 window.addEventListener('scroll', function SelectGukbap() {
     // 첫번째 Bar
     var sdk = document.getElementById('navSDK');
@@ -150,6 +153,11 @@ window.addEventListener('scroll', function SelectGukbap() {
     var nav3 = document.getElementById("nav3");
     var nav4 = document.getElementById("nav4");
     var verticalLine = document.getElementById("gukbapMakeVerticalLine");
+    var gukbapMakeBar = document.getElementById("gukbapMakeBar");
+    var shadow = document.getElementById("resultShadow");
+    var resultFrom = document.getElementById("seasoning-plate");
+    var resultTo = document.getElementById("myGukbap");
+    var resultBack = document.getElementById("seasoningContainer");
 
     if (scrollYPos > 7800 && scrollYPos < 9000){
         // 나머지 리스트 컬러 초기화
@@ -165,7 +173,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         nav1.style.backgroundColor = "#00AD5D";
         nav1.style.color = "#FFFFFF";
     }
-    else if(scrollYPos >= 9000) {
+    else if(scrollYPos >= 9000 && scrollYPos < 11000) {
         // 나머지 리스트 컬러 초기화
         verticalLine.style.border = "1px solid #999999";
         nav1.style.backgroundColor = "#FFFFFF";
@@ -179,10 +187,50 @@ window.addEventListener('scroll', function SelectGukbap() {
         nav2.style.backgroundColor = "#00AD5D";
         nav2.style.color = "#FFFFFF";
     }
+    else if(scrollYPos >= 11000 && scrollYPos < 12500) {
+        // 나머지 리스트 컬러 초기화
+        verticalLine.style.border = "1px solid #999999";
+        nav1.style.backgroundColor = "#FFFFFF";
+        nav1.style.color = "#747474";
+        nav2.style.backgroundColor = "#FFFFFF";
+        nav2.style.color = "#747474";
+        nav4.style.backgroundColor = "#FFFFFF";
+        nav4.style.color = "#747474";
 
-    // console.log(scrollYPos);
+        console.log("사골우리기 단계");
+        nav3.style.backgroundColor = "#00AD5D";
+        nav3.style.color = "#FFFFFF";
+    }
+    else if(scrollYPos >= 12500 && scrollYPos < 13000) {
+        // 나머지 리스트 컬러 초기화
+        verticalLine.style.border = "1px solid white";
+        nav1.style.backgroundColor = "#FFFFFF";
+        nav1.style.color = "#747474";
+        nav2.style.backgroundColor = "#FFFFFF";
+        nav2.style.color = "#747474";
+        nav3.style.backgroundColor = "#FFFFFF";
+        nav3.style.color = "#747474";
+
+        console.log("사골우리기 단계");
+        nav4.style.backgroundColor = "#00AD5D";
+        nav4.style.color = "#FFFFFF";
+    } else if (scrollYPos >= 13000) {
+        gukbapMakeBar.style.opacity = 0;
+        shadow.style.opacity = 1;
+    }
+
+    if (scrollYPos < 13000)
+    {
+        shadow.style.opacity = 0;
+    }
+
+    if (scrollYPos > 11300 && !changes) {
+        var gukbap = document.getElementById("seasoning-plate");
+        gukbap.style.animation = "Gukbap 1s";
+        changes = true;
+    }
+
     console.log(scrollYPosNomarlize);
-    // console.log(GukbapSelect);
 
     sdkIntroduceAnimation(scrollYPos);
 });
@@ -218,7 +266,9 @@ function gukbapSelectClick(inputGukbap) {
     console.log("현재 GukbapSelect = " + GukbapSelect);
 }
 
-var change = true;
+// 소머리 인터랙션
+function headColorChange() {
+    var change = true;
 
 setInterval(function() {
     var head = document.getElementById("head");
@@ -244,6 +294,26 @@ setInterval(function() {
         change = true;
     }
 }, 1000);
+}
+
+// 사골 끓이기 인터랙션
+function fireColorChange() {
+    var change = true;
+
+setInterval(function() {
+    var fire = document.getElementById("fire");
+
+    if (change && scrollYPos >= 7500 && scrollYPos < 9500) {
+        fire.src = "images/make_1_after.png"
+        change = false;
+    }
+    else if (change == false && scrollYPos >= 7500 && scrollYPos < 9500){
+        fire.src = "images/make_1.png"
+        change = true;
+    }
+}, 1500);
+}
+
 
 function sdkIntroduceAnimation(scrollYPos) {
     var map = document.getElementById("pig-map");

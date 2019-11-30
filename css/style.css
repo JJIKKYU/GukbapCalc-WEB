@@ -149,6 +149,7 @@ input[type="number"] {
     color: #00AD5D;
 }
 
+/*
 #gukbap {
     width: 100vw;
     height: 100vh;
@@ -156,15 +157,32 @@ input[type="number"] {
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    /* animation: introGukbap 2s; */
+    animation: introGukbap 2s;
     transition: all ease-in-out 2s;
     right: -65%;
+    transform: rotateZ(30deg);
     overflow-x: hidden;
+}
+*/
+
+#titleGukbapImg {
+    position: absolute;
+    right: -20%;
+    height: 100vh;
+    transition: all ease-in-out 2s;
+    animation: introGukbap 2s;
+    transform: rotateZ(-120deg);
 }
 
 @keyframes introGukbap {
-    from {right : -100%;}
-    to {right : -50%;}
+    from {
+        right : -60%;
+        transform: rotateZ(0);
+    }
+    to {
+        right : -20%;
+        transform: rotateZ(-120deg);
+    }
 }
 
 /* 국밥선택 */
@@ -1050,14 +1068,14 @@ input[type="number"] {
     position:absolute;
     left:30%;
     transform:rotate( -10deg );
-    top: -180px;
+    top: -300px;
     z-index: 3;
 }
 
 #bone2 {
     position:absolute;
     right:30%;
-    top: -180px;
+    top: -300px;
     transform:rotate( 20deg );
     z-index: 3;
 }
@@ -1065,7 +1083,7 @@ input[type="number"] {
 /* 국밥은 어쩌다 가성비 음식 */
 .why-titleBox {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 200px;
 }
 
 #why-para {
@@ -1078,14 +1096,54 @@ input[type="number"] {
 
 /* 재료 페럴렉스 */
 #material {
-
+    width: 600px;
+    text-align: center;
+    display: block;
+    position: relative;
 }
+
+#materialPig1 {
+    position: absolute;
+    right: 0;
+    top: -200px;
+}
+
+#materialPig2 {
+    position: absolute;
+    left: 0;
+    top: 50px;
+}
+
+#materialPig3 {
+    position: absolute;
+    right: 0;
+    top: 250px;
+}
+
+#materialPig4 {
+    position: absolute;
+    left: 0;
+    top: 500px;
+}
+
+#makeResult {
+    width: 100%;
+    height: 730px;
+    top: 100px;
+    background-image: url("../images/material_pig_4.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: -1;
+}
+
+
 
 /* 국밥에 뚝배기를 사용하는 이유 */
 
 .plate-titleBox {
     text-align: center;
-    background-color: black;
+    padding-top: 250px;
 }
 
 #plate-para {
@@ -1138,11 +1196,50 @@ input[type="number"] {
     color: white;
 }
 
+#seasoning-plate {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+    z-index: 50;
+    margin-left: 0px;
+    /* transition: margin-left ease-in-out 2s, rotateZ ease-in-out 2s; */
+    opacity: 1;
+    /* animation: Gukbap 2s; */
+}
+
+@keyframes Gukbap {
+    from {
+        margin-left: -1000px;
+        transform: rotateZ(-180deg);
+    }
+    to {
+        margin-left: 0px;
+        transform: rotateZ(-360deg);
+    }
+}
+
+
+
+#resultShadow {
+    position: absolute;
+    z-index: -2;
+    left: 280px;
+    top: -120px;
+    transform: scale(0.65);
+    opacity: 0;
+    transition: opacity ease-in-out .5s;
+}
+
+#seasoning-plate img:nth-child(1){
+    width: 650px;
+}
+
 /* 대령이요! */
 .complete-titleBox {
     color: white;
     float: left;
-    margin-top: 300px;
+    margin-top: 220px;
     z-index: 1;
 }
 
@@ -1172,17 +1269,28 @@ input[type="number"] {
     width: 100%;
     height: 249px;
     position: absolute;
-    top: -100px;
+    top: -30px;
     left: 0;
 }
 
-.completeGroundBottom {
-    background-image: url("../images/gukbap-complete_1.png");
+#completeMask img {
+    z-index: 48;
+    position: absolute;
+}
+
+.completeGroundBottom2 {
+    background-color: white;
     width: 100%;
     height: 249px;
+    top: 10px;
     position: absolute;
-    bottom: -100px;
     left: 0;
+    /* z-index: 52; */
+}
+
+#completeMask {
+    height: 300px;
+    margin-top: -20px;
 }
 
 /* ending 국밥 하나만 기억해주세요 */
@@ -1267,6 +1375,7 @@ footer {
     background-image: url("../images/footerBG.png");
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: -200px;
 }
 
 footer .name {

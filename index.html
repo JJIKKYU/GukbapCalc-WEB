@@ -32,6 +32,7 @@
         <div id="gukbap">
 
         </div>
+        <img id="titleGukbapImg" src="images/titleGukbap.png" alt="">
 
     </header>
     <section id="introduce">
@@ -215,7 +216,7 @@
     <section id="make-gukbap">
         <div class="gukbap-make" id="sagol">
             <div class="contents-container">
-                    <div class="gukbapBar" id="gukbapMakeBar" data-parallax='{"y":12000, "from-scroll": 8400, "distance":12000, "smoothness":0}'>
+                    <div class="gukbapBar" id="gukbapMakeBar" data-parallax='{"y":4600, "from-scroll": 8400, "distance":4600, "smoothness":0}'>
                             <div class="verticalLine" id="gukbapMakeVerticalLine"></div>
                             <ul>
                                 <li id="nav1">사골우리기</li>
@@ -224,13 +225,13 @@
                                 <li id="nav4">국밥 완성</li>
                             </ul>
                         </div>
-                <h1>깊은 맛을 낼 수 있도록<br>사골국물을 잘 우려주세요!</h1>
+                <h1>깊은 맛을 낼 수 있도록<br>사골을 잘 담궈주세요!!</h1>
                 <div id="gukbapMakePlate">
                     <img id="plate" src="images/make_0.png" alt="">
                     <img id="fire" src="images/make_1.png" alt="">
                     <img id="plateCover" src="images/make_2.png" alt="" >
-                    <img id="bone1" src="images/make_3.png" alt="" data-parallax='{"y":-20, "rotateZ":-30,"from-scroll": 7800, "distance":1200, "smoothness":5}'>
-                    <img id="bone2" src="images/make_3.png" alt="" data-parallax='{"y":40, "rotateZ":40,"from-scroll": 7800, "distance":1200, "smoothness":5}'>
+                    <img id="bone1" src="images/make_3.png" alt="" data-parallax='{"y":150, "rotateZ":-30,"from-scroll": 7500, "distance":1200, "smoothness":5}'>
+                    <img id="bone2" src="images/make_3.png" alt="" data-parallax='{"y":150, "rotateZ":40,"from-scroll": 7500, "distance":1200, "smoothness":5}'>
                 </div>
                 <div class="gukbap-make-ground"></div>
             </div><!-- contents-container -->
@@ -250,14 +251,18 @@
             </div><!-- contents-container -->
         </div><!-- gukbap-introduce -->
 
-        <div class="gukbap-make" id="material">
-            <div class="contents-container">
-                
+        <div class="gukbap-make">
+            <div class="contents-container" id="material">
+                <img id="materialPig1" src="images/material_pig_0.png" alt="" data-parallax='{"y":600, "rotateZ":40,"from-scroll": 9400, "distance":2100, "smoothness":10}'>
+                <img id="materialPig2" src="images/material_pig_1.png" alt="" data-parallax='{"y":500, "rotateZ":-40,"from-scroll": 9500, "distance":2100, "smoothness":20}'>
+                <img id="materialPig3" src="images/material_pig_2.png" alt="" data-parallax='{"y":450, "rotateZ":30,"from-scroll": 9600, "distance":2100, "smoothness":15}'>
+                <img id="materialPig4" src="images/material_pig_3.png" alt="" data-parallax='{"y":350, "rotateZ":10,"from-scroll": 9700, "distance":2100, "smoothness":20}'>
             </div><!-- contents-container -->
         </div><!-- gukbap-make -->
 
         <div class="gukbap-introduce" id="why-introduce">
             <div class="contents-container">
+                    <div id="makeResult" data-parallax='{"y":-100,"from-scroll": 10400, "distance":500, "smoothness":20, "op":0, "op-scr":400, "op-sp":400}'></div>
                 <div class="plate-titleBox">
                     <h1 class="introduce-title" id="plate-title">국밥에 <span class="green">뚝배기</span>를 사용하는 이유!</h1>
                     <div class="bar"></div><br>
@@ -268,8 +273,8 @@
             </div><!-- contents-container -->
         </div><!-- gukbap-introduce -->
 
-        <div class="gukbap-make" id="material">
-            <div class="contents-container">
+        <div class="gukbap-make">
+            <div class="contents-container" id="seasoningContainer">
                 <div class="seasoning-titleBox">
                     <h1>기호에 맞도록 <span class="yellow">양념</span>을 <span class="yellow">추가</span>해주세요!</h1>
                     <ul>
@@ -277,6 +282,10 @@
                         <li>다대기</li>
                         <li>후추</li>
                     </ul>
+                </div>
+                <div id="seasoning-plate" data-parallax='{"y":920, "x":500, "scale":1.2,"from-scroll": 12500, "distance":400, "smoothness":10}'>
+                    <img src="images/material_pig_5.png" alt="">
+                    <img id="resultShadow" src="images/result_shadow.png" alt="">
                 </div>
             </div><!-- contents-container -->
         </div><!-- gukbap-make -->
@@ -291,9 +300,16 @@
                         이 국밥은 100점 만점에 65점.</p>
                 </div>
                 <div class="completeGroundTop"></div>
-                <div class="completeGroundBottom"></div>
             </div><!-- contents-container -->
         </div><!-- gukbap-make -->
+        <!-- 
+        <div class="gukbap-make" id="completeMask">
+            <img src="images/gukbap-complete_1.png" alt="">
+                <div class="completeGroundBottom2"></div>
+        </div>
+    -->
+        
+        <!-- 
 
         <div class="gukbap-make" id="ending">
             <div class="contents-container">
@@ -305,7 +321,9 @@
                         오늘은 친구와 함께 뜨끈-하고 든든-한 국밥 어떠신가요?</p>
                 </div>
                 <div class="share">
-                    <div id="myGukbap"></div>
+                    <div id="myGukbap">
+
+                    </div>
                     <div id="shareTitle">
                         <span id="productBottom">에어팟 프로</span> 살 돈이면<br>
                         뜨끈-하고 든든-한<br>
@@ -317,8 +335,9 @@
                         <h3>카카오톡으로 공유하기</h3>
                     </div>
                 </div>
-            </div><!-- contents-container -->
-        </div><!-- gukbap-make -->
+            </div>
+        </div>
+    -->
 
     </section><!-- make-gukbap -->
 
