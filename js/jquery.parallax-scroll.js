@@ -38,7 +38,13 @@ var ParallaxScroll = {
         if (this.showLogs) console.log("Parallax Scroll / " + message);
     },
     _onScroll: function(noSmooth) {
-        var scroll = $(document).scrollTop();
+        var s = $(window).scrollTop(),
+        d = $(document).height(),
+        c = $(window).height();
+  
+        var scrollPercent = (s / (d - c)) * 100;
+        var scroll =  scrollPercent;
+        var basisScroll = (d-c)/100;
         var windowHeight = $(window).height();
         this._log("onScroll " + scroll);
         $("[data-parallax]").each($.proxy(function(index, el) {
@@ -191,7 +197,7 @@ var ParallaxScroll = {
                     properties["scaleY"] *= properties["scale"];
                     properties["scaleZ"] *= properties["scale"];
                 }
-                var translate3d = "translate3d(" + (properties["x"] ? properties["x"] : 0) + "px, " + (properties["y"] ? properties["y"] : 0) + "px, " + (properties["z"] ? properties["z"] : 0) + "px)";
+                var translate3d = "translate3d(" + (properties["x"] ? properties["x"] : 0) + "px, " + (properties["y"] ? properties["y"] : 0) * basisScroll + "px, " + (properties["z"] ? properties["z"] : 0) + "px)";
                 var rotate3d = "rotateX(" + (properties["rotateX"] ? properties["rotateX"] : 0) + "deg) rotateY(" + (properties["rotateY"] ? properties["rotateY"] : 0) + "deg) rotateZ(" + (properties["rotateZ"] ? properties["rotateZ"] : 0) + "deg)";
                 var scale3d = "scaleX(" + properties["scaleX"] + ") scaleY(" + properties["scaleY"] + ") scaleZ(" + properties["scaleZ"] + ")";
                 var cssTransform = translate3d + " " + rotate3d + " " + scale3d + ";";

@@ -1,28 +1,28 @@
-resizable(document.getElementById('product'),44);
-resizable(document.getElementById('price'),28);
+resizable(document.getElementById("product"),44);
+resizable(document.getElementById("price"),28);
 calculator();
 headColorChange();
 fireColorChange();
 
 function calculator() {
     var sdk = 6000;
-    var productBottom = document.getElementById("productBottom");
-    var bowlBottom = document.getElementById("bowlBottom");
-    var productTop = document.getElementById("product");
 
-    var priceObj = document.getElementById('price');
+    var priceObj = document.getElementById("price");
     priceObj.addEventListener("keyup", calc);
 
     function calc(){
+        console.log(priceObj.value);
         var inputPrice = priceObj.value;
         var result = parseInt(inputPrice / sdk);
         if (result <= 0){
-            document.getElementById('bowl').innerHTML = "안";
+            document.getElementById("bowl").innerHTML = '안';
         }
-        else{
-            bowlBottom.innerHTML = "국밥" + result + "그릇";
-            productBottom.innerHTML = productTop.value;
-            document.getElementById('bowl').innerHTML = result + "그릇";
+        else if (result > 0 && result < 1000) {
+            document.getElementById("bowl").innerHTML = result + "그릇";
+        }
+        else if (result >= 1000){
+            document.getElementById("bowl").innerHTML = "국밥집을 하나 차리고말지";
+            document.getElementById("bowlAfterText").innerHTML = "";
         }
         
     }
@@ -65,6 +65,7 @@ $(window).on('scroll', function(){
     
     console.clear();
     console.log(scrollPercent);
+    console.log((d-c)/100*scrollPercent);
   })
 
 var scrollYPos = 0;
@@ -96,7 +97,6 @@ window.addEventListener('scroll', function SelectGukbap() {
         seed.style.color = "#747474";
 
         // 순대국밥 선택관련
-        console.log("순대국밥 선택");
         sdk.style.backgroundColor = "#FFC854";
         sdk.style.color = "#FFFFFF";
         GukbapSelect = Gukbap.sdk;
@@ -110,11 +110,8 @@ window.addEventListener('scroll', function SelectGukbap() {
         head.style.color = "#747474";
         seed.style.backgroundColor = "#FFFFFF";
         seed.style.color = "#747474";
-
-        console.log("돼지국밥 선택");
         pig.style.backgroundColor = "#FFC854";
         pig.style.color = "#FFFFFF";
-        GukbapSelect = Gukbap.pig;
     }
     else if (scrollYPos > 2350 && scrollYPos < 3250)
     {
@@ -126,10 +123,8 @@ window.addEventListener('scroll', function SelectGukbap() {
         seed.style.backgroundColor = "#FFFFFF";
         seed.style.color = "#747474";
 
-        console.log("소머리국밥 선택");
         head.style.backgroundColor = "#FFC854";
         head.style.color = "#FFFFFF";
-        GukbapSelect = Gukbap.head;
     }
     else if (scrollYPos > 3250 && scrollYPos < 4250)
     {
@@ -141,10 +136,8 @@ window.addEventListener('scroll', function SelectGukbap() {
         head.style.backgroundColor = "#FFFFFF";
         head.style.color = "#747474";
 
-        console.log("콩나물국밥 선택");
         seed.style.backgroundColor = "#FFC854";
         seed.style.color = "#FFFFFF";
-        GukbapSelect = Gukbap.seed;
     }
 
     // 두번째 Bar
@@ -155,9 +148,6 @@ window.addEventListener('scroll', function SelectGukbap() {
     var verticalLine = document.getElementById("gukbapMakeVerticalLine");
     var gukbapMakeBar = document.getElementById("gukbapMakeBar");
     var shadow = document.getElementById("resultShadow");
-    var resultFrom = document.getElementById("seasoning-plate");
-    var resultTo = document.getElementById("myGukbap");
-    var resultBack = document.getElementById("seasoningContainer");
 
     if (scrollYPos > 7800 && scrollYPos < 9000){
         // 나머지 리스트 컬러 초기화
@@ -230,7 +220,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         changes = true;
     }
 
-    console.log(scrollYPosNomarlize);
+    console.log("Normal : " + scrollYPosNomarlize);
 
     sdkIntroduceAnimation(scrollYPos);
 });
@@ -243,24 +233,28 @@ function gukbapSelectClick(inputGukbap) {
         GukbapSelect = Gukbap.sdk;
         gukbapName.innerHTML = "순대국밥";
         console.log("순대국밥 선택완료");
+        changeMaterial("sdk");
         location.href = "#sdk-introduce";
     }
     else if ("pig" == inputGukbap) {
         GukbapSelect = Gukbap.pig;
         gukbapName.innerHTML = "돼지국밥";
         console.log("돼지국밥 선택완료");
+        changeMaterial("pig");
         location.href = "#pig-introduce";
     }
     else if ("head" == inputGukbap) {
         GukbapSelect = Gukbap.head;
         gukbapName.innerHTML = "소머리국밥";
         console.log("소머리국밥 선택완료");
+        changeMaterial("head");
         location.href = "#head-introduce";
     }
     else {
         GukbapSelect = Gukbap.seed;
         gukbapName.innerHTML = "콩나물국밥";
         console.log("콩나물국밥 선택완료")
+        changeMaterial("seed");
         location.href = "#seed-introduce";
     }
     console.log("현재 GukbapSelect = " + GukbapSelect);
@@ -338,5 +332,44 @@ function sdkIntroduceAnimation(scrollYPos) {
         light2.style.opacity = 0;
         light3.style.opacity = 0;
         light4.style.opacity = 1;    
+    }
+}
+
+
+// 선택에 따라 국밥 재료 변경
+function changeMaterial(name) {
+    var material1 = document.getElementById("materialPig1");
+    var material2 = document.getElementById("materialPig2");
+    var material3 = document.getElementById("materialPig3");
+    var material4 = document.getElementById("materialPig4");
+    var resultGukbap = document.getElementById("resultGukbap");
+
+    if (name == "sdk"){
+        material1.src = "images/material_sdk_0.png";
+        material2.src = "images/material_sdk_1.png";
+        material3.src = "images/material_sdk_2.png";
+        material4.src = "images/material_sdk_3.png";
+        resultGukbap.src = "images/material_sdk_4.png"
+    }
+    else if (name == "pig"){
+        material1.src = "images/material_pig_0.png";
+        material2.src = "images/material_pig_1.png";
+        material3.src = "images/material_pig_2.png";
+        material4.src = "images/material_pig_3.png";
+        resultGukbap.src = "images/material_pig_4.png"
+    }
+    else if (name == "head"){
+        material1.src = "images/material_head_0.png";
+        material2.src = "images/material_head_1.png";
+        material3.src = "images/material_head_2.png";
+        material4.src = "images/material_head_3.png";
+        resultGukbap.src = "images/material_head_4.png"
+    }
+    else if (name == "seed"){
+        material1.src = "images/material_seed_0.png";
+        material2.src = "images/material_seed_1.png";
+        material3.src = "images/material_seed_2.png";
+        material4.src = "images/material_seed_3.png";
+        resultGukbap.src = "images/material_seed_4.png"
     }
 }
