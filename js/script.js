@@ -66,6 +66,7 @@ $(window).on('scroll', function(){
     console.clear();
     console.log(scrollPercent);
     console.log((d-c)/100*scrollPercent);
+    
   })
 
 var scrollYPos = 0;
@@ -86,7 +87,7 @@ window.addEventListener('scroll', function SelectGukbap() {
 
     
 
-    if (scrollYPos > 95 && scrollYPos < 1450)
+    if (scrollPercent > 3 && scrollPercent < 10)
     {
         // 나머지 리스트 컬러 초기화
         pig.style.backgroundColor = "#FFFFFF";
@@ -101,7 +102,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         sdk.style.color = "#FFFFFF";
         GukbapSelect = Gukbap.sdk;
     }
-    else if (scrollYPos > 1450 && scrollYPos < 2350)
+    else if (scrollPercent >= 10 && scrollPercent < 17)
     {
         // 나머지 리스트 컬러 초기화
         sdk.style.backgroundColor = "#FFFFFF";
@@ -113,7 +114,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         pig.style.backgroundColor = "#FFC854";
         pig.style.color = "#FFFFFF";
     }
-    else if (scrollYPos > 2350 && scrollYPos < 3250)
+    else if (scrollPercent >= 17 && scrollPercent < 24)
     {
         // 나머지 리스트 컬러 초기화
         sdk.style.backgroundColor = "#FFFFFF";
@@ -126,7 +127,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         head.style.backgroundColor = "#FFC854";
         head.style.color = "#FFFFFF";
     }
-    else if (scrollYPos > 3250 && scrollYPos < 4250)
+    else if (scrollPercent >= 24 && scrollPercent < 31)
     {
         // 나머지 리스트 컬러 초기화
         sdk.style.backgroundColor = "#FFFFFF";
@@ -271,7 +272,7 @@ setInterval(function() {
     var light3 = document.getElementById("light3");
     var light4 = document.getElementById("light4");
 
-    if (change && scrollYPos >= 6000 && scrollYPos < 7000) {
+    if (change && scrollPercent >= 44.5 && scrollPercent < 51.7) {
         head.src = "images/head_introduce_0_changer.png"
         light1.style.opacity = 0;
         light2.style.opacity = 0;
@@ -279,7 +280,7 @@ setInterval(function() {
         light4.style.opacity = 0;
         change = false;
     }
-    else if (change == false && scrollYPos >= 6000 && scrollYPos < 7000){
+    else if (change == false && scrollPercent >= 44.5 && scrollPercent < 51.7){
         head.src = "images/head_introduce_0.png"
         light1.style.opacity = 1;
         light2.style.opacity = 1;
@@ -297,7 +298,7 @@ function fireColorChange() {
 setInterval(function() {
     var fire = document.getElementById("fire");
 
-    if (change && scrollYPos >= 7500 && scrollYPos < 9500) {
+    if (change && scrollPercent >= 7500 && scrollYPos < 9500) {
         fire.src = "images/make_1_after.png"
         change = false;
     }

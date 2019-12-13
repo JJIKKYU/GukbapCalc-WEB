@@ -11,7 +11,7 @@
 }
 
 body {
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     overflow-x: hidden;
 }
@@ -202,7 +202,7 @@ input[type="number"] {
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding-top: 350px;
+    padding-top: 450px;
     
     transition: opacity ease-in-out .5s;
     /* float: left;
@@ -522,7 +522,7 @@ input[type="number"] {
     color: white;
     position: absolute;
     bottom: 20px;
-    left: 100px;;
+    left: 140px;;
     width: 250px;
 }
 
@@ -603,12 +603,12 @@ input[type="number"] {
 
 #sdk-yellowGround {
     width: 100%;
-    height: 185px;
+    height: 250px;
     background-image: url("../images/sdk_introduce_5.png");
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
-    bottom: -50px;
+    bottom: -150px;
     z-index: -2;
     /* transition: all ease-in-out 1s; */
     background-size: cover;
@@ -621,7 +621,7 @@ input[type="number"] {
     background-image: url("../images/sdk_introduce_0.png");
     background-repeat: no-repeat;
     right: 30%;
-    bottom: 0px;
+    bottom: -50px;
     filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
     /* transition: all ease-in-out 1s; */
 }
@@ -649,7 +649,7 @@ input[type="number"] {
     background-image: url("../images/sdk_introduce_2.png");
     background-repeat: no-repeat;
     left: 400px;
-    bottom: 140px;
+    bottom: -25px;
     filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
     /* transition: all ease-in-out 1s; */
 }
@@ -738,7 +738,7 @@ input[type="number"] {
 
 #pig-bottom {
     width: 100%;
-    height: 188px;
+    height: 220px;
     background-image: url("../images/pig_introduce_0.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -773,14 +773,14 @@ input[type="number"] {
     position: absolute;
     height: 250px;
     margin-left: 170px;
-    margin-top: -100px;
+    margin-top: -40px;
 }
 
 #pig-map img:nth-child(4){
     position: absolute;
     height: 250px;
     margin-left: 150px;
-    margin-top: -100px;
+    margin-top: -60px;
 }
 
 /* 소머리 국밥 */
@@ -812,6 +812,7 @@ input[type="number"] {
     left: -480px;
     opacity: 0;
     transition: opacity ease-in-out .2s;
+    z-index: -1;
     /* transition-delay: 0.2s; */
 }
 
@@ -822,6 +823,7 @@ input[type="number"] {
     right: -500px;
     opacity: 0;
     transition: opacity ease-in-out .2s;
+    z-index: -1;
     /* transition-delay: 0.4s; */
 }
 
@@ -832,6 +834,7 @@ input[type="number"] {
     left: -480px;
     opacity: 0;
     transition: opacity ease-in-out .2s;
+    z-index: -1;
     /* transition-delay: 0.8s; */
 }
 
@@ -842,6 +845,7 @@ input[type="number"] {
     right: -460px;
     opacity: 0;
     transition: opacity ease-in-out .2s;
+    z-index: -1;
     /* transition-delay: 0.6s; */
 }
 
@@ -940,12 +944,12 @@ input[type="number"] {
 
 #seed-bottom {
     width: 100%;
-    height: 188px;
+    height: 250px;
     background-image: url("../images/seed_introduce_0.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    bottom: -80px;
+    bottom: -180px;
     left: 0;
 }
 
