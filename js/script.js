@@ -387,9 +387,20 @@ function addSause(btnName) {
     if (btnName == "shirimp")
     {
         var shirimpImg = document.createElement('img');
-        shirimpImg.src="images/material_seed_3.png";
+        shirimpImg.src="images/material_shrimp.png";
         shirimpImg.className = "sause";
         shirimpImg.id = "shirimp"
+        
+        var xPos = parseInt((Math.random() * 150));
+        var yPos = parseInt((Math.random() * 160));
+        var rotation = parseInt((Math.random() * 180));
+        
+        // -과 + 랜덤으로
+        if (xPos%2 == 0) xPos *= -1;
+        if (yPos%2 == 0) yPos *= -1;
+
+        // sauseImg.style.transform = "translate3d(0, 0, 0)";
+       shirimpImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
 
         div.appendChild(shirimpImg);
 
@@ -398,20 +409,38 @@ function addSause(btnName) {
     else if (btnName == "sause")
     {
         var sauseImg = document.createElement('img');
-        sauseImg.src="images/material_seed_3.png";
+        sauseImg.src="images/material_sause.png";
         sauseImg.className = "sause";
         sauseImg.id = "sause"
+        var xPos = parseInt((Math.random() * 150));
+        var yPos = parseInt((Math.random() * 160));
+        var rotation = parseInt((Math.random() * 180));
+        
+        // -과 + 랜덤으로
+        if (xPos%2 == 0) xPos *= -1;
+        if (yPos%2 == 0) yPos *= -1;
+
+        // sauseImg.style.transform = "translate3d(0, 0, 0)";
+       sauseImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
 
         div.appendChild(sauseImg);
-
-        console.log("sause!");
     }
     else if (btnName == "pepper")
     {
         var pepperImg = document.createElement('img');
-        pepperImg.src="images/material_seed_3.png";
+        pepperImg.src="images/material_pepper.png";
         pepperImg.className = "sause";
         pepperImg.id = "pepper"
+        var xPos = parseInt((Math.random() * 150));
+        var yPos = parseInt((Math.random() * 160));
+        var rotation = parseInt((Math.random() * 180));
+        
+        // -과 + 랜덤으로
+        if (xPos%2 == 0) xPos *= -1;
+        if (yPos%2 == 0) yPos *= -1;
+
+       pepperImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+
 
         div.appendChild(pepperImg);
 
