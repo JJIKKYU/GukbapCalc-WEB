@@ -9,6 +9,8 @@
     <title>국밥계산기 - Gukbap Calculator</title>
 </head>
 <body>
+
+        
     <header id="header">
         <!-- 좌상단 햄버거 메뉴 -->
         <div class="navBar">
@@ -33,6 +35,7 @@
         <img id="titleGukbapImg" src="images/titleGukbap.png" alt="">
 
     </header>
+
     <section id="introduce">
         <div class="gukbap-select" id="gukbap-select">
             <div class="container">
@@ -125,7 +128,7 @@
                 <div id="sdk-horse1" data-parallax='{"y":-1, "from-scroll": 28, "distance":10,"smoothness":0}'></div>
                 <div id="sdk-horse2" data-parallax='{"x":-350, "from-scroll": 26, "distance":10,"smoothness":5}'></div>
                 <div id="sdk-yellowGround" data-parallax='{"y":-1, "from-scroll": 26, "distance":10, "smoothness":5}'></div>
-                <div id="sdk-house" data-parallax='{"y":-1, "from-scroll": 28.3, "distance":10, "smoothness":5}'></div>
+                <div id="sdk-house" data-parallax='{"y":-1, "from-scroll": 28.3, "distance":5, "smoothness":5}'></div>
             </div><!-- container -->
         </div><!-- gukbap-introduce -->
 
@@ -204,9 +207,12 @@
                                 누구나 요리할 수 있는 식재료여서 더욱 즐겨먹게 되었나봅니다.</p>
                 </div><!-- seed titleBox -->
                 <div id="seed-bottomImg">
-                    <img src="images/seed_introduce_1.png" alt="" data-parallax='{"y":-1, "scale" : 2,"from-scroll": 53, "distance":5, "smoothness":5}'>
+                    <img src="images/seed_introduce_1.png" alt="" data-parallax='{"y":-2, "scale" : 2,"from-scroll": 50.5, "distance":3, "smoothness":5}'>
                 </div>
-                <div id="seed-bottom" data-parallax='{"y":-1, "from-scroll": 53, "distance":10, "smoothness":5}'></div>
+                <!-- <div id="seed-bottom" data-parallax='{"y":-1, "from-scroll": 53, "distance":10, "smoothness":5}'></div> -->
+                <div id="sketchYellowGround-container">
+                        <div id="sketchYellowGroundSeed"> </div>
+                </div>
             </div><!-- contents-container -->
         </div><!-- gukbap-introduce -->
     </section><!-- introduce section -->
@@ -214,7 +220,7 @@
     <section id="make-gukbap">
         <div class="gukbap-make" id="sagol">
             <div class="contents-container">
-                    <div class="gukbapBar" id="gukbapMakeBar" data-parallax='{"y":4600, "from-scroll": 8400, "distance":4600, "smoothness":0}'>
+                    <div class="gukbapBar" id="gukbapMakeBar" data-parallax='{"y":34, "from-scroll": 60, "distance":34, "smoothness":0}'>
                             <div class="verticalLine" id="gukbapMakeVerticalLine"></div>
                             <ul>
                                 <li id="nav1">사골우리기</li>
@@ -228,8 +234,8 @@
                     <img id="plate" src="images/make_0.png" alt="">
                     <img id="fire" src="images/make_1.png" alt="">
                     <img id="plateCover" src="images/make_2.png" alt="" >
-                    <img id="bone1" src="images/make_3.png" alt="" data-parallax='{"y":150, "rotateZ":-30,"from-scroll": 7500, "distance":1200, "smoothness":5}'>
-                    <img id="bone2" src="images/make_3.png" alt="" data-parallax='{"y":150, "rotateZ":40,"from-scroll": 7500, "distance":1200, "smoothness":5}'>
+                    <img id="bone1" src="images/make_3.png" alt="" data-parallax='{"y":1.5, "rotateZ":-30,"from-scroll": 54, "distance":10, "smoothness":5}'>
+                    <img id="bone2" src="images/make_3.png" alt="" data-parallax='{"y":1.5, "rotateZ":40,"from-scroll": 54, "distance":10, "smoothness":5}'>
                 </div>
                 <div class="gukbap-make-ground"></div>
             </div><!-- contents-container -->
@@ -251,16 +257,22 @@
 
         <div class="gukbap-make">
             <div class="contents-container" id="material">
-                <img id="materialPig1" src="images/material_pig_0.png" alt="" data-parallax='{"y":600, "rotateZ":40,"from-scroll": 9400, "distance":2100, "smoothness":10}'>
-                <img id="materialPig2" src="images/material_pig_1.png" alt="" data-parallax='{"y":500, "rotateZ":-40,"from-scroll": 9500, "distance":2100, "smoothness":20}'>
-                <img id="materialPig3" src="images/material_pig_2.png" alt="" data-parallax='{"y":450, "rotateZ":30,"from-scroll": 9600, "distance":2100, "smoothness":15}'>
-                <img id="materialPig4" src="images/material_pig_3.png" alt="" data-parallax='{"y":350, "rotateZ":10,"from-scroll": 9700, "distance":2100, "smoothness":20}'>
+                <img id="materialPig1" src="images/material_pig_0.png" alt="" data-parallax='{"y":1.5, "rotateZ":-10, "from-scroll": 64, "distance":13, "smoothness":10}'>
+                <img id="materialPig2" src="images/material_pig_1.png" alt="" data-parallax='{"y":1.3, "rotateZ":-40,"from-scroll": 65, "distance":13, "smoothness":20}'>
+                <img id="materialPig3" src="images/material_pig_2.png" alt="" data-parallax='{"y":1.1, "rotateZ":30,"from-scroll": 65.5, "distance":13, "smoothness":15}'>
+                <img id="materialPig4" src="images/material_pig_3.png" alt="" data-parallax='{"y":1, "rotateZ":-10,"from-scroll": 66, "distance":13, "smoothness":20}'>
+
+                <img id="materialOnion1" src="images/material_0.png" alt=""data-parallax='{"y":1.8, "rotateZ":30,"from-scroll": 67, "distance":13, "smoothness":10}'>
+                <img id="materialOnion2" src="images/material_1.png" alt=""data-parallax='{"y":1.6, "rotateZ":-20,"from-scroll": 68, "distance":13, "smoothness":10}'>
+                <img id="materialOnion3" src="images/material_2.png" alt=""data-parallax='{"y":1.3, "rotateZ":15,"from-scroll": 68.5, "distance":13, "smoothness":5}'>
+                <img id="materialOnion4" src="images/material_3.png" alt=""data-parallax='{"y":1, "rotateZ":-10,"from-scroll": 69, "distance":13, "smoothness":10}'>
+                <img id="materialOnion5" src="images/material_4.png" alt=""data-parallax='{"y":1, "rotateZ":20,"from-scroll": 69.5, "distance":13, "smoothness":20}'>
             </div><!-- contents-container -->
         </div><!-- gukbap-make -->
 
         <div class="gukbap-introduce" id="why-introduce">
             <div class="contents-container">
-                    <div id="makeResult" data-parallax='{"y":-100,"from-scroll": 10400, "distance":500, "smoothness":20, "op":0, "op-scr":400, "op-sp":400}'></div>
+                    <div id="makeResult" data-parallax='{"y":-1,"from-scroll": 74, "distance":3, "smoothness":10, "op":0, "op-scr":3, "op-sp":1}'></div>
                 <div class="plate-titleBox">
                     <h1 class="introduce-title" id="plate-title">국밥에 <span class="green">뚝배기</span>를 사용하는 이유!</h1>
                     <div class="bar"></div><br>
@@ -276,18 +288,20 @@
                 <div class="seasoning-titleBox">
                     <h1>기호에 맞도록 <span class="yellow">양념</span>을 <span class="yellow">추가</span>해주세요!</h1>
                     <ul>
-                        <li>새우젓</li>
-                        <li>다대기</li>
-                        <li>후추</li>
+                        <li id="shirimp" onclick="addSause('shirimp')">새우젓</li>
+                        <li id="sause" onclick="addSause('sause')">다대기</li>
+                        <li id="pepper" onclick="addSause('pepper')">후추</li>
                     </ul>
                 </div>
-                <div id="seasoning-plate" data-parallax='{"y":920, "x":500, "scale":1.2,"from-scroll": 12500, "distance":400, "smoothness":10}'>
+                <div id="seasoning-plate" data-parallax='{"y":8, "x":500, "scale":1.2,"from-scroll": 90, "distance":3.5, "smoothness":10}'>
                     <img id="resultGukbap" src="images/material_pig_5.png" alt="">
                     <img id="resultShadow" src="images/result_shadow.png" alt="">
                 </div>
             </div><!-- contents-container -->
         </div><!-- gukbap-make -->
-
+        <div id="sketchYellowGround-container">
+                <div id="sketchYellowGround"> </div>
+        </div>
         <div class="gukbap-make" id="complete">
             <div class="contents-container">
                 <div class="complete-titleBox">
@@ -297,7 +311,8 @@
                         새우젓을 한 번쯤 넣었다면 어땠을까? 약간은 싱겁다.
                         이 국밥은 100점 만점에 65점.</p>
                 </div>
-                <div class="completeGroundTop"></div>
+                
+                <!-- <div class="completeGroundTop"></div> -->
             </div><!-- contents-container -->
         </div><!-- gukbap-make -->
         <!-- 
@@ -338,10 +353,15 @@
     -->
 
     </section><!-- make-gukbap -->
-
+    <section id="sketch">
+            
+        </section>
     <!-- footer -->
     <footer>
-        <div class="contents-container">
+            <div id="sketch-container">
+                    <div id="my-sketch"> </div>
+            </div>
+        <div class="contents-container" id ="footer-container">
             <div class="name">
                 <div class="icon"></div>
                 <div class="footerName">
@@ -360,6 +380,9 @@
 </body>
 <script src="js/jquery.parallax-scroll.js"></script>
 <script src="js/script.js"></script>
+<script src="js/p5.js"></script>
+<script src="js/sketch.js"></script>
+<!-- <script src="js/sketch_yellowGround.js"></script> -->
 
 
 <svg>

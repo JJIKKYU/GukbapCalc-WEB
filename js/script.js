@@ -150,7 +150,7 @@ window.addEventListener('scroll', function SelectGukbap() {
     var gukbapMakeBar = document.getElementById("gukbapMakeBar");
     var shadow = document.getElementById("resultShadow");
 
-    if (scrollYPos > 7800 && scrollYPos < 9000){
+    if (scrollPercent > 55 && scrollPercent < 67){
         // 나머지 리스트 컬러 초기화
         verticalLine.style.border = "1px solid white";
         nav2.style.backgroundColor = "#FFFFFF";
@@ -164,7 +164,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         nav1.style.backgroundColor = "#00AD5D";
         nav1.style.color = "#FFFFFF";
     }
-    else if(scrollYPos >= 9000 && scrollYPos < 11000) {
+    else if(scrollPercent >= 67 && scrollPercent < 83) {
         // 나머지 리스트 컬러 초기화
         verticalLine.style.border = "1px solid #999999";
         nav1.style.backgroundColor = "#FFFFFF";
@@ -178,7 +178,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         nav2.style.backgroundColor = "#00AD5D";
         nav2.style.color = "#FFFFFF";
     }
-    else if(scrollYPos >= 11000 && scrollYPos < 12500) {
+    else if(scrollPercent >= 83 && scrollPercent < 88) {
         // 나머지 리스트 컬러 초기화
         verticalLine.style.border = "1px solid #999999";
         nav1.style.backgroundColor = "#FFFFFF";
@@ -192,7 +192,7 @@ window.addEventListener('scroll', function SelectGukbap() {
         nav3.style.backgroundColor = "#00AD5D";
         nav3.style.color = "#FFFFFF";
     }
-    else if(scrollYPos >= 12500 && scrollYPos < 13000) {
+    else if(scrollPercent >= 88 && scrollPercent < 92.5) {
         // 나머지 리스트 컬러 초기화
         verticalLine.style.border = "1px solid white";
         nav1.style.backgroundColor = "#FFFFFF";
@@ -205,17 +205,17 @@ window.addEventListener('scroll', function SelectGukbap() {
         console.log("사골우리기 단계");
         nav4.style.backgroundColor = "#00AD5D";
         nav4.style.color = "#FFFFFF";
-    } else if (scrollYPos >= 13000) {
+    } else if (scrollPercent >= 92.5) {
         gukbapMakeBar.style.opacity = 0;
         shadow.style.opacity = 1;
     }
 
-    if (scrollYPos < 13000)
+    if (scrollPercent < 92.5)
     {
         shadow.style.opacity = 0;
     }
 
-    if (scrollYPos > 11300 && !changes) {
+    if (scrollPercent > 82 && !changes) {
         var gukbap = document.getElementById("seasoning-plate");
         gukbap.style.animation = "Gukbap 1s";
         changes = true;
@@ -298,11 +298,11 @@ function fireColorChange() {
 setInterval(function() {
     var fire = document.getElementById("fire");
 
-    if (change && scrollPercent >= 7500 && scrollYPos < 9500) {
+    if (change && scrollPercent >= 55.5 && scrollPercent < 70.5) {
         fire.src = "images/make_1_after.png"
         change = false;
     }
-    else if (change == false && scrollYPos >= 7500 && scrollYPos < 9500){
+    else if (change == false && scrollPercent >= 55.5 && scrollPercent < 70.5){
         fire.src = "images/make_1.png"
         change = true;
     }
@@ -328,7 +328,7 @@ function sdkIntroduceAnimation(scrollYPos) {
     var light3 = document.getElementById("light3");
     var light4 = document.getElementById("light4");
 
-    if (scrollYPos >= 7000){
+    if (scrollPercent >= 52){
         light1.style.opacity = 0;
         light2.style.opacity = 0;
         light3.style.opacity = 0;
@@ -357,7 +357,7 @@ function changeMaterial(name) {
         material2.src = "images/material_pig_1.png";
         material3.src = "images/material_pig_2.png";
         material4.src = "images/material_pig_3.png";
-        resultGukbap.src = "images/material_pig_4.png"
+        resultGukbap.src = "images/material_pig_5.png"
     }
     else if (name == "head"){
         material1.src = "images/material_head_0.png";
@@ -373,4 +373,50 @@ function changeMaterial(name) {
         material4.src = "images/material_seed_3.png";
         resultGukbap.src = "images/material_seed_4.png"
     }
+}
+
+// 재료추가 script
+
+
+function addSause(btnName) {
+    var div = document.getElementById("seasoning-plate");
+    var shirimp = document.getElementById("shirimp");
+    var sause = document.getElementById("sause");
+    var pepper = document.getElementById("pepper");
+
+    if (btnName == "shirimp")
+    {
+        var shirimpImg = document.createElement('img');
+        shirimpImg.src="images/material_seed_3.png";
+        shirimpImg.className = "sause";
+        shirimpImg.id = "shirimp"
+
+        div.appendChild(shirimpImg);
+
+        console.log("shirimp!");
+    }
+    else if (btnName == "sause")
+    {
+        var sauseImg = document.createElement('img');
+        sauseImg.src="images/material_seed_3.png";
+        sauseImg.className = "sause";
+        sauseImg.id = "sause"
+
+        div.appendChild(sauseImg);
+
+        console.log("sause!");
+    }
+    else if (btnName == "pepper")
+    {
+        var pepperImg = document.createElement('img');
+        pepperImg.src="images/material_seed_3.png";
+        pepperImg.className = "sause";
+        pepperImg.id = "pepper"
+
+        div.appendChild(pepperImg);
+
+        console.log("pepper!");
+    }
+
+    
 }

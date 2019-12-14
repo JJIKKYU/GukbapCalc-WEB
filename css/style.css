@@ -834,7 +834,7 @@ input[type="number"] {
     left: -480px;
     opacity: 0;
     transition: opacity ease-in-out .2s;
-    z-index: -1;
+    z-index: 1;
     /* transition-delay: 0.8s; */
 }
 
@@ -845,7 +845,7 @@ input[type="number"] {
     right: -460px;
     opacity: 0;
     transition: opacity ease-in-out .2s;
-    z-index: -1;
+    z-index: 1;
     /* transition-delay: 0.6s; */
 }
 
@@ -935,23 +935,28 @@ input[type="number"] {
 
 /* 콩나물 국밥 */
 .seed-titleBox {
-    padding-top: 100px;
+    padding-top: 90px;
 }
 
 #seed-title {
     color: #00AD5D;
 }
 
-#seed-bottom {
-    width: 100%;
-    height: 250px;
-    background-image: url("../images/seed_introduce_0.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+#sketchYellowGroundSeed {
+    /* background-image: url("../images/seed_introduce_0.png"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     position: absolute;
-    bottom: -180px;
+    bottom: -20px;
     left: 0;
+    right: 0;
 }
+
+#seed-para {
+    z-index: 999;
+}
+
+
 
 #seed-bottomImg {
     filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.2));
@@ -1110,6 +1115,7 @@ input[type="number"] {
     position: absolute;
     right: 0;
     top: -200px;
+    color: #00AD5D;
 }
 
 #materialPig2 {
@@ -1130,6 +1136,39 @@ input[type="number"] {
     top: 500px;
 }
 
+#materialOnion1 {
+    position: absolute;
+    top: -220px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+#materialOnion2 {
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    z-index: -1;
+}
+
+#materialOnion3 {
+    position: absolute;
+    top: 200px;
+    right: -10px;
+}
+
+#materialOnion4 {
+    position: absolute;
+    top: 300px;
+    right: 100px;
+}
+
+#materialOnion5 {
+    position: absolute;
+    top: 420px;
+    left: 160px;
+}
+
+
 #makeResult {
     width: 100%;
     height: 730px;
@@ -1138,7 +1177,7 @@ input[type="number"] {
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
 }
 
 
@@ -1148,6 +1187,8 @@ input[type="number"] {
 .plate-titleBox {
     text-align: center;
     padding-top: 250px;
+    position: relative;
+    z-index: 2;
 }
 
 #plate-para {
@@ -1223,7 +1264,12 @@ input[type="number"] {
     }
 }
 
-
+#seasoning-plate .sause {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
 
 #resultShadow {
     position: absolute;
@@ -1275,6 +1321,9 @@ input[type="number"] {
     position: absolute;
     top: -30px;
     left: 0;
+}
+#sketchYellowGround {
+    margin-bottom: -20px;
 }
 
 #completeMask img {
@@ -1376,10 +1425,31 @@ input[type="number"] {
 footer {
     width: 100%;
     height: 400px;
-    background-image: url("../images/footerBG.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-image: url("../images/footerBG.png"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     margin-bottom: -200px;
+}
+
+#footer-container {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 400px;
+    margin-top: 400px;
+}
+
+#sketch-container {
+    position: relative;
+    margin-top: -200px;
+}
+
+#my-sketch {
+    position: absolute;
+    height: 400px;
+    z-index: 1;
 }
 
 footer .name {
@@ -1418,4 +1488,12 @@ footer .copyright {
     text-align: right;
     float: right;
     padding-top: 220px;
+}
+
+
+/* 해상도 대응 */
+@media all and (min-width:1920px) and (max-width:2559px) {
+    .gukbapBar {
+        padding-top: 350px;
+    }
 }
