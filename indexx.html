@@ -1,3 +1,14 @@
+<?$conn = mysqli_connect(
+  'localhost',
+  'jjikkyu',
+  'wjdwlsrbs9^',
+  'jjikkyu');
+
+	mysqli_query($conn, "set session character_set_connection=utf8;");
+	mysqli_query($conn, "set session character_set_results=utf8;");
+	mysqli_query($conn, "set session character_set_client=utf8;");
+	?>
+
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -21,18 +32,18 @@
         <div class="title">
             <h1 class="titleText">
                 <input type="text" value="에어팟프로" id="product" maxlength="8"><input type="text" value="330000" id="price"><span id="priceWon">원</span></span>에 살 바에 <br>
-                뜨끈하고 든든한 <span id="titleYellow">순대국밥</span> <br>
-                <span id="bowl">55그릇</span><span id="bowlAfterText"> 먹고말지</span>
+                뜨끈하고 든든한 <span id="titleYellow"></span> <br>
+                <span id="bowl"></span><span id="bowlAfterText"> 먹고말지</span>
             </h1>
 
             <a href="#gukbap-select"><div class="arrow"></div></a>
         </div>
-
+        
         <!-- 우측 국밥 이미지 -->
         <div id="gukbap">
-
+            <img id="titleGukbapImg" src="" alt="">
         </div>
-        <img id="titleGukbapImg" src="images/titleGukbap.png" alt="">
+        
 
     </header>
 
@@ -229,7 +240,7 @@
                                 <li id="nav4">국밥 완성</li>
                             </ul>
                         </div>
-                <h1>깊은 맛을 낼 수 있도록<br>사골을 잘 담궈주세요!!</h1>
+                <h1 id="sagolTitle">깊은 맛을 낼 수 있도록<br>사골을 잘 담궈주세요!!</h1>
                 <div id="gukbapMakePlate">
                     <img id="plate" src="images/make_0.png" alt="">
                     <img id="fire" src="images/make_1.png" alt="">
@@ -284,16 +295,22 @@
         </div><!-- gukbap-introduce -->
 
         <div class="gukbap-make">
+        
             <div class="contents-container" id="seasoningContainer">
+            
                 <div class="seasoning-titleBox">
                     <h1>기호에 맞도록 <span class="yellow">양념</span>을 <span class="yellow">추가</span>해주세요!</h1>
                     <ul>
+                        <li onclick="window.location.href='index.php'">다시만들기</li>
                         <li id="shirimp" onclick="addSause('shirimp')">새우젓</li>
                         <li id="sause" onclick="addSause('sause')">다대기</li>
                         <li id="pepper" onclick="addSause('pepper')">후추</li>
+                        <li id="egg" onclick="addSause('egg')">달걀</li>
                     </ul>
                 </div>
+                
                 <div id="seasoning-plate" data-parallax='{"y":8, "x":500, "scale":1.2,"from-scroll": 90, "distance":3.5, "smoothness":10}'>
+                
                     <img id="resultGukbap" src="images/material_pig_5.png" alt="">
                     <img id="resultShadow" src="images/result_shadow.png" alt="">
                 </div>
@@ -306,10 +323,40 @@
             <div class="contents-container">
                 <div class="complete-titleBox">
                     <h1>뜨뜻-하고 든든-한<br><span id="gukbapName">돼지국밥</span> 대령이요!</h1>
-                    <p class="para" id="gukbapScore">사골을 너무 오랫동안 우려 텁텁하지만
-                        돼지고기의 부드러움과 다대기가 그 맛을 잡아준다.
-                        새우젓을 한 번쯤 넣었다면 어땠을까? 약간은 싱겁다.
-                        이 국밥은 100점 만점에 65점.</p>
+                    <div class="resultScore">
+                        <ul class="titleScore">
+                            <li>짠맛</li>
+                            <li>매운맛</li>
+                            <li>MSG</li>
+                            <li>고소함</li>
+                            <li>총점</li>
+                        </ul>
+                        <ul class="rateScore">
+                            <li><div id="salted"></div><br></li>
+                            <li><div id="hot"></div></li>
+                            <li><div id="msg"></div></li>
+                            <li><div id="egged"></div></li>
+                            <li><div id="resultRate"></div></li>
+                        </ul>
+                        <p id="scoreText-container" >
+                        <span id="scoreText">50점</span><br>
+                        <form name="comment_form" id="jjikkyu" action="" method="post">
+                            
+                            <h2 id="scroeTitle">국밥 점수를 등록해보세요!</h2><br>                            
+                            <input type="hidden" name="kind" id="kind" value="돼지국밥">
+                                <input type="hidden" name="score" id="score" value="">
+                                <input type="text" name="name" id="name" value="이름을 입력해주세요." onclick="this.value=''">
+                                <span id="submit" onclick="formSubmit()">순위등록</span>
+                            
+                                <span id="ranking" onclick="list()">순위 업데이트</span>
+                                </form>
+                                
+                        </p>
+                        <div id="comment_container">
+                            
+                        </div>
+                    </div>
+                    
                 </div>
                 
                 <!-- <div class="completeGroundTop"></div> -->
@@ -358,10 +405,13 @@
         </section>
     <!-- footer -->
     <footer>
-            <div id="sketch-container">
+            <div id="sketch-container" data-parallax='{"y":-1.4,"from-scroll": 97, "distance":3, "smoothness":20}'>
                     <div id="my-sketch"> </div>
             </div>
         <div class="contents-container" id ="footer-container">
+            <div id="top" data-parallax='{"y":-1,"from-scroll": 93, "distance":6, "smoothness":20}'>
+                <span><a href="#header" >Top</a></span>
+            </div>
             <div class="name">
                 <div class="icon"></div>
                 <div class="footerName">
@@ -370,6 +420,7 @@
                 </div><!-- footerName -->
             </div><!-- name -->
 
+
             <div class="copyright">
                 <span>Copyrightⓒ. 2019. JJIKKYU. All Rights Reserved</span><br>
                 <span>HongikUniv. Digital Media Design. JJIKKYU</span><br>
@@ -377,11 +428,43 @@
             </div><!-- copyright -->
         </div><!-- contents-container -->
     </footer><!-- footer -->
+    
 </body>
 <script src="js/jquery.parallax-scroll.js"></script>
 <script src="js/script.js"></script>
 <script src="js/p5.js"></script>
 <script src="js/sketch.js"></script>
+<script type="text/javascript">
+        
+    function formSubmit() {
+        var params = jQuery("#jjikkyu").serialize();
+        jQuery.ajax({
+            url: 'jjikkyu_comment_process.php',
+            type: 'POST',
+            data: params,
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: 'html',
+            success: function(data) {
+            //   document.getElementById('description_form').innerHTML='';
+            //   document.getElementById('description_form').value = '';
+            list();
+            console.log("submit complete!");
+    }})};
+
+    function list() {
+        $.ajax({
+    	type: 'post',
+  	    url: 'list.php?start=0',
+  		dataType: 'html',
+  		success: function(data) {
+  			$("#comment_container").html(data);
+  		}
+  	});
+  }
+  
+
+  list();
+</script>
 <!-- <script src="js/sketch_yellowGround.js"></script> -->
 
 

@@ -1,11 +1,13 @@
-resizable(document.getElementById("product"),44);
-resizable(document.getElementById("price"),28);
+
+
+
 calculator();
 headColorChange();
 fireColorChange();
 
+var sdk = 6000;
 function calculator() {
-    var sdk = 6000;
+    
 
     var priceObj = document.getElementById("price");
     priceObj.addEventListener("keyup", calc);
@@ -16,9 +18,11 @@ function calculator() {
         var result = parseInt(inputPrice / sdk);
         if (result <= 0){
             document.getElementById("bowl").innerHTML = '안';
+            document.getElementById("bowlAfterText").innerHTML = " 먹고말지";
         }
         else if (result > 0 && result < 1000) {
             document.getElementById("bowl").innerHTML = result + "그릇";
+            document.getElementById("bowlAfterText").innerHTML = " 먹고말지";
         }
         else if (result >= 1000){
             document.getElementById("bowl").innerHTML = "국밥집을 하나 차리고말지";
@@ -27,6 +31,37 @@ function calculator() {
         
     }
 }
+
+function randomProductPrice() {
+    var product = document.getElementById("product");
+    var price = document.getElementById("price");
+    var result = parseInt(price.value / sdk);
+
+    var random = parseInt(Math.random()*100)%4;
+    if (random == 0){
+        product.value = "에어팟프로";
+        price.value = "330000";
+        document.getElementById("bowl").innerHTML = parseInt(330000 / sdk) + "그릇";
+    }
+    else if (random == 1) {
+        product.value = "맥북프로";
+        price.value = "3190000";
+        document.getElementById("bowl").innerHTML = parseInt(3190000 / sdk) + "그릇";
+        
+    }else if (random == 2) {
+        product.value = "애플워치 에르메스";
+        price.value = "1679000";
+        document.getElementById("bowl").innerHTML = parseInt(1679000 / sdk) + "그릇";
+
+    }else if (random == 3) {
+        product.value = "돼지국밥";
+        price.value = "6000";
+        document.getElementById("bowl").innerHTML = parseInt(6000 / sdk) + "그릇";
+    }
+}
+randomProductPrice();
+resizable(document.getElementById("product"),44);
+resizable(document.getElementById("price"),28);
 
 // 텍스트필드 자동으로 조절해주는 함수
 function resizable (el, factor) {
@@ -71,6 +106,8 @@ $(window).on('scroll', function(){
 
 var scrollYPos = 0;
 var changes = false;
+
+
 window.addEventListener('scroll', function SelectGukbap() {
     // 첫번째 Bar
     var sdk = document.getElementById('navSDK');
@@ -228,10 +265,12 @@ window.addEventListener('scroll', function SelectGukbap() {
 
 function gukbapSelectClick(inputGukbap) {
     var gukbapName = document.getElementById("gukbapName");
+    var kind = document.getElementById("kind");
 
     console.log(inputGukbap)
     if ("sdk" == inputGukbap) {
         GukbapSelect = Gukbap.sdk;
+        kind.value = "순대국밥";
         gukbapName.innerHTML = "순대국밥";
         console.log("순대국밥 선택완료");
         changeMaterial("sdk");
@@ -239,6 +278,7 @@ function gukbapSelectClick(inputGukbap) {
     }
     else if ("pig" == inputGukbap) {
         GukbapSelect = Gukbap.pig;
+        kind.value = "돼지국밥";
         gukbapName.innerHTML = "돼지국밥";
         console.log("돼지국밥 선택완료");
         changeMaterial("pig");
@@ -246,6 +286,7 @@ function gukbapSelectClick(inputGukbap) {
     }
     else if ("head" == inputGukbap) {
         GukbapSelect = Gukbap.head;
+        kind.value = "소머리국밥";
         gukbapName.innerHTML = "소머리국밥";
         console.log("소머리국밥 선택완료");
         changeMaterial("head");
@@ -253,6 +294,7 @@ function gukbapSelectClick(inputGukbap) {
     }
     else {
         GukbapSelect = Gukbap.seed;
+        kind.value = "콩나물국밥";
         gukbapName.innerHTML = "콩나물국밥";
         console.log("콩나물국밥 선택완료")
         changeMaterial("seed");
@@ -377,12 +419,17 @@ function changeMaterial(name) {
 
 // 재료추가 script
 
+var shrimpCnt = 0;
+var sauseCnt = 0;
+var pepperCnt = 0;
+var eggCnt = 0;
 
 function addSause(btnName) {
     var div = document.getElementById("seasoning-plate");
-    var shirimp = document.getElementById("shirimp");
-    var sause = document.getElementById("sause");
-    var pepper = document.getElementById("pepper");
+    var saltedBar = document.getElementById("salted");
+    var hotBar = document.getElementById("hot");
+    var msgBar = document.getElementById("msg");
+    var eggBar = document.getElementById("egged");
 
     if (btnName == "shirimp")
     {
@@ -390,6 +437,8 @@ function addSause(btnName) {
         shirimpImg.src="images/material_shrimp.png";
         shirimpImg.className = "sause";
         shirimpImg.id = "shirimp"
+        if (shrimpCnt < 15) saltedBar.style.width = shrimpCnt * 20 + "px";
+        else saltedBar.style.width = "300px";
         
         var xPos = parseInt((Math.random() * 150));
         var yPos = parseInt((Math.random() * 160));
@@ -403,6 +452,7 @@ function addSause(btnName) {
        shirimpImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
 
         div.appendChild(shirimpImg);
+        shrimpCnt++;
 
         console.log("shirimp!");
     }
@@ -415,13 +465,16 @@ function addSause(btnName) {
         var xPos = parseInt((Math.random() * 150));
         var yPos = parseInt((Math.random() * 160));
         var rotation = parseInt((Math.random() * 180));
+        if (sauseCnt < 15) hotBar.style.width = sauseCnt * 20 + "px";
+        else hotBar.style.width = "300px";
         
         // -과 + 랜덤으로
         if (xPos%2 == 0) xPos *= -1;
         if (yPos%2 == 0) yPos *= -1;
 
         // sauseImg.style.transform = "translate3d(0, 0, 0)";
-       sauseImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+        sauseImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+        sauseCnt++;
 
         div.appendChild(sauseImg);
     }
@@ -434,18 +487,163 @@ function addSause(btnName) {
         var xPos = parseInt((Math.random() * 150));
         var yPos = parseInt((Math.random() * 160));
         var rotation = parseInt((Math.random() * 180));
+        if (pepperCnt < 15) msgBar.style.width = pepperCnt * 20 + "px";
+        else msgBar.style.width = "300px";
         
         // -과 + 랜덤으로
         if (xPos%2 == 0) xPos *= -1;
         if (yPos%2 == 0) yPos *= -1;
-
-       pepperImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
-
-
+        pepperImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+        pepperCnt++;
         div.appendChild(pepperImg);
+    }
+    else if (btnName == "egg") 
+    {
+        var eggImg = document.createElement('img');
+        eggImg.src="images/material_egg.png";
+        eggImg.className = "sause";
+        eggImg.id = "egg"
+        var xPos = parseInt((Math.random() * 140));
+        var yPos = parseInt((Math.random() * 140));
+        var rotation = parseInt((Math.random() * 180));
+        if (eggCnt < 15) eggBar.style.width = eggCnt * 20 + "px";
+        else eggBar.style.width = "300px";
+        
+        // -과 + 랜덤으로
+        if (xPos%2 == 0) xPos *= -1;
+        if (yPos%2 == 0) yPos *= -1;
+        eggImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+        eggCnt++;
+        div.appendChild(eggImg);
+    }
+}
 
-        console.log("pepper!");
+
+window.addEventListener('click', function() {
+    var resultBar = document.getElementById("resultRate");
+    var scoreText = document.getElementById("scoreText");
+    var scorePost = document.getElementById("score");
+
+    resultScore = 150 + (eggCnt < 15 ? eggCnt * 5 : -eggCnt * 2) + (pepperCnt < 15 ? pepperCnt * 5 : -pepperCnt * 2) 
+    + (sauseCnt < 15 ? sauseCnt * 10 : -sauseCnt * 5) + (shrimpCnt < 15 ? shrimpCnt * 10 : -shrimpCnt * 2);
+    resultBar.style.width = resultScore + "px";
+    scoreText.innerHTML = parseInt((resultScore % 300) / 3) + "점";
+    scorePost.value = parseInt((resultScore % 300) / 3);
+    
+    if (resultBar.style.width <= 0)
+    {
+        resultBar.style.width = "0px";
+        scoreText.innerText = "0점";
+    }
+    this.console.log(resultBar.style.width);
+    
+});
+
+var randomGukbapVar = parseInt((Math.random()*100))%4;
+    console.log(randomGukbapVar);
+function randomTitleGukbap() {
+    var titleGukbapImg = document.getElementById("titleGukbapImg");
+    var titleYellowText = document.getElementById("titleYellow");
+    if (randomGukbapVar == 0)
+    {
+        titleGukbapImg.src = "images/titleGukbap.png";
+        titleYellowText.innerHTML = "순대국밥";
+    }else if (randomGukbapVar == 1)
+    {
+        titleGukbapImg.src = "images/titleGukbap_2.png";
+        titleYellowText.innerHTML = "소머리국밥";
+    }else if (randomGukbapVar == 2)
+    {
+        titleGukbapImg.src = "images/titleGukbap_3.png";
+        titleYellowText.innerHTML = "콩나물국밥";
+    }else{
+        titleGukbapImg.src = "images/titleGukbap_4.png";
+        titleYellowText.innerHTML = "돼지국밥";
     }
 
+    var div = document.getElementById("gukbap");
+    
+
+    
+
+    var xSize = 200;
+    var ySize = 200;
+    
+
+    
+
+    for (var i = 0; i < parseInt((Math.random()*100))%10; ++i)
+    {
+        var xPos = parseInt((Math.random() * xSize));
+        var yPos = parseInt((Math.random() * ySize));
+        var rotation = parseInt((Math.random() * 180));
+
+        if (xPos%2 == 0) xPos *= -1;
+        if (yPos%2 == 0) yPos *= -1;
+
+        var eggImg = document.createElement('img');
+        eggImg.src="images/titleGukbap_material_egg.png";
+        eggImg.className = "mainSause";
+        eggImg.id = "mainEgg";
+        eggImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+
+        div.appendChild(eggImg);
+    }
+
+    for (var i = 0; i < parseInt((Math.random()*100))%10; ++i)
+    {
+        var xPos = parseInt((Math.random() * xSize));
+        var yPos = parseInt((Math.random() * ySize));
+        var rotation = parseInt((Math.random() * 180));
+
+        if (xPos%2 == 0) xPos *= -1;
+        if (yPos%2 == 0) yPos *= -1;
+
+        var sauseImg = document.createElement('img');
+        sauseImg.src="images/titleGukbap_material_sause.png";
+        sauseImg.className = "mainSause";
+        sauseImg.id = "mainSause";
+        sauseImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+
+        div.appendChild(sauseImg);
+    }
+
+    for (var i = 0; i < parseInt((Math.random()*100))%15; ++i)
+    {
+        var xPos = parseInt((Math.random() * xSize));
+        var yPos = parseInt((Math.random() * ySize));
+        var rotation = parseInt((Math.random() * 180));
+
+        if (xPos%2 == 0) xPos *= -1;
+        if (yPos%2 == 0) yPos *= -1;
+
+        var shrimpImg = document.createElement('img');
+        shrimpImg.src="images/material_shrimp.png";
+        shrimpImg.className = "mainSause";
+        shrimpImg.id = "mainShrimp"
+        shrimpImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+
+        div.appendChild(shrimpImg);
+    }
+
+    for (var i = 0; i < parseInt((Math.random()*100))%30; ++i)
+    {
+        var xPos = parseInt((Math.random() * xSize));
+        var yPos = parseInt((Math.random() * ySize));
+        var rotation = parseInt((Math.random() * 180));
+
+        if (xPos%2 == 0) xPos *= -1;
+        if (yPos%2 == 0) yPos *= -1;
+
+        var pepperImg = document.createElement('img');
+        pepperImg.src="images/material_pepper.png";
+        pepperImg.className = "mainSause";
+        pepperImg.id = "mainPepper";
+        pepperImg.style.transform = "translate3d(" + xPos + "px," + yPos + "px, 0) rotate(" + rotation + "deg)";
+
+        div.appendChild(pepperImg);
+    }
     
 }
+
+randomTitleGukbap();

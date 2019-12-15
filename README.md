@@ -1,2 +1,0 @@
-# GukbapCalc
-Gukbap Calculator Website
